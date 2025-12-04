@@ -1,4 +1,6 @@
 import type { CollectionConfig } from 'payload'
+import { Chapters } from './Chapters'
+import { Quests } from './Quests'
 
 export const Lessons: CollectionConfig = {
   slug: 'lessons',
@@ -7,8 +9,13 @@ export const Lessons: CollectionConfig = {
     description: 'En fait ca s\'appelle Lessons mais ca représente les capsules 🫢',
     listSearchableFields: ['name'],
   },
-  auth: true,
   fields: [
+    {
+      name: 'journey',
+      type: 'relationship',
+      relationTo: 'journeys',
+      required: true,
+    },
     {
       name: 'name',
       type: 'text',
@@ -26,6 +33,17 @@ export const Lessons: CollectionConfig = {
       required: false,
       filterOptions: {
         mimeType: { contains: 'image' },
+      },
+    },
+    {
+      name: 'Contenus',
+      type: 'join',
+      collection: [Chapters.slug, Quests.slug],
+      on: 'lesson',
+      // orderable: true,
+      admin: {
+        allowCreate: true,
+        defaultColumns: ['title', 'content'],
       },
     },
   ],

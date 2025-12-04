@@ -5,19 +5,29 @@ export const Journeys: CollectionConfig = {
     admin: {
         useAsTitle: 'name',
         description: 'Vas-y Eléa, ponds nous des supers parcours !!',
-        listSearchableFields: ['name'],
+        listSearchableFields: ['name', 'description'],
+        defaultColumns: ['name', 'description'],
     },
-    auth: true,
     fields: [
         {
             name: 'name',
-            type: 'richText',
+            type: 'text',
             required: true,
         },
         {
             name: 'description',
             type: 'text',
             required: true,
+        },
+        {
+          name: 'lessons',
+          type: 'join',
+          collection: 'lessons',
+          on: 'journey',
+          orderable: true,
+          admin: {
+            allowCreate: true,
+          },
         },
         // {
         //     name: 'image',

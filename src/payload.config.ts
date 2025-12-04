@@ -6,22 +6,24 @@ import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
 
-import { Users } from './collections/Users'
+import { Admins } from './collections/Admins'
 import { Media } from './collections/Media'
 import { Journeys } from './collections/Journeys'
 import { Lessons } from './collections/Lessons'
+import { Chapters } from './collections/Chapters'
+import { Quests } from './collections/Quests'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
   admin: {
-    user: Users.slug,
+    user: Admins.slug,
     importMap: {
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Journeys, Lessons],
+  collections: [Admins, Media, Journeys, Lessons, Chapters, Quests],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
@@ -29,7 +31,6 @@ export default buildConfig({
   },
   db: postgresAdapter({
     schemaName: 'content',
-    disableCreateDatabase: true,
     pool: {
       connectionString: process.env.DATABASE_URI || '',
     },
