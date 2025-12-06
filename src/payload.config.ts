@@ -12,6 +12,9 @@ import { Journeys } from './collections/Journeys'
 import { Lessons } from './collections/Lessons'
 import { Chapters } from './collections/Chapters'
 import { Quests } from './collections/Quests'
+import { Habits } from './collections/Habits'
+import { Quizzes } from './collections/Quizzes'
+import { Universes } from './collections/Universes'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -23,7 +26,8 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Admins, Media, Journeys, Lessons, Chapters, Quests],
+  blocks: [Chapters, Quests, Habits, Quizzes],
+  collections: [Admins, Media, Universes, Journeys, Lessons],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

@@ -1,6 +1,8 @@
 import type { CollectionConfig } from 'payload'
 import { Chapters } from './Chapters'
 import { Quests } from './Quests'
+import { Habits } from './Habits'
+import { Quizzes } from './Quizzes'
 
 export const Lessons: CollectionConfig = {
   slug: 'lessons',
@@ -12,6 +14,7 @@ export const Lessons: CollectionConfig = {
   fields: [
     {
       name: 'journey',
+      label: 'Parcours associé',
       type: 'relationship',
       relationTo: 'journeys',
       required: true,
@@ -36,15 +39,27 @@ export const Lessons: CollectionConfig = {
       },
     },
     {
-      name: 'Contenus',
-      type: 'join',
-      collection: [Chapters.slug, Quests.slug],
-      on: 'lesson',
-      // orderable: true,
-      admin: {
-        allowCreate: true,
-        defaultColumns: ['title', 'content'],
-      },
+      name: 'contents',
+      type: 'blocks',
+      minRows: 1,
+      maxRows: 20,
+      blocks: [
+        Chapters,
+        Quests,
+        Habits,
+        Quizzes,
+      ],
     },
+    // {
+    //   name: 'Contenus',
+    //   type: 'join',
+    //   collection: [Chapters.slug, Quests.slug],
+    //   on: 'lesson',
+    //   // orderable: true,
+    //   admin: {
+    //     allowCreate: true,
+    //     defaultColumns: ['title', 'content'],
+    //   },
+    // },
   ],
 }

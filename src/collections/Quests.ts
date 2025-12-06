@@ -1,18 +1,9 @@
-import type { CollectionConfig } from 'payload'
+import type { Block } from 'payload'
 
-export const Quests: CollectionConfig = {
+export const Quests: Block = {
   slug: 'quests',
-  admin: {
-    useAsTitle: 'title',
-    description: 'Les quêtes',
-  },
+  dbName: 'quests',
   fields: [
-    {
-      name: 'lesson',
-      type: 'relationship',
-      relationTo: 'lessons',
-      required: true,
-    },
     {
       name: 'title',
       type: 'text',
@@ -21,6 +12,12 @@ export const Quests: CollectionConfig = {
     {
       name: 'content',
       type: 'richText',
+      required: true,
+    },
+    {
+      name: 'task',
+      label: 'Le call to action',
+      type: 'text',
       required: true,
     },
   ],

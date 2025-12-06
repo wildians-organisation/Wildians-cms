@@ -1,18 +1,9 @@
-import type { CollectionConfig } from 'payload'
+import type { Block } from 'payload'
 
-export const Chapters: CollectionConfig = {
+export const Chapters: Block = {
   slug: 'chapters',
-  admin: {
-    useAsTitle: 'title',
-    description: 'Les parchemins',
-  },
+  dbName: 'chapters',
   fields: [
-    {
-      name: 'lesson',
-      type: 'relationship',
-      relationTo: 'lessons',
-      required: true,
-    },
     {
       name: 'title',
       type: 'text',
