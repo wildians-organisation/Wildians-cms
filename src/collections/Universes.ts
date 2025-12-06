@@ -10,11 +10,13 @@ export const Universes: CollectionConfig = {
             name: 'name',
             type: 'text',
             required: true,
+            localized: true,
         },
         {
             name: 'description',
             type: 'text',
             required: true,
+            localized: true,
         },
         {
           name: 'journeys',

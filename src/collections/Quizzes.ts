@@ -12,23 +12,27 @@ export const QuestionsField: Field = {
       label: 'La question',
       type: 'text',
       required: true,
+      localized: true,
     },
     {
-      name: 'anwswers',
+      name: 'answers',
       label: 'Les réponses possibles',
       type: 'textarea',
       required: true,
+      localized: true,
     },
     {
       name: 'anwswer',
       label: 'La bonne réponse',
       type: 'number',
       required: true,
+      localized: true,
     },
     {
       name: 'explanation',
       label: 'Explication',
       type: 'richText',
+      localized: true,
     },
   ],
 }
@@ -42,6 +46,7 @@ export const Quizzes: Block = {
       label: 'Titre du quiz',
       type: 'text',
       required: true,
+      localized: true,
     },
     QuestionsField
   ],

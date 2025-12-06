@@ -26,6 +26,10 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
+  localization: {
+    locales: ['fr', 'en'],
+    defaultLocale: 'fr',
+  },
   blocks: [Chapters, Quests, Habits, Quizzes],
   collections: [Admins, Media, Universes, Journeys, Lessons],
   editor: lexicalEditor(),

@@ -9,18 +9,21 @@ export const Habits: Block = {
       label: 'Le titre de l\'habitude',
       type: 'text',
       required: true,
+      localized: true,
     },
     {
       name: 'content',
       label: 'Description juste en dessous du titre',
       type: 'richText',
       required: true,
+      localized: true,
     },
     {
       name: 'task',
       label: 'Le call to action',
       type: 'text',
       required: true,
+      localized: true,
     },
     {
       name: 'duration',

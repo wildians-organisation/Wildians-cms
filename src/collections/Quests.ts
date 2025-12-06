@@ -8,17 +8,20 @@ export const Quests: Block = {
       name: 'title',
       type: 'text',
       required: true,
+      localized: true,
     },
     {
       name: 'content',
       type: 'richText',
       required: true,
+      localized: true,
     },
     {
       name: 'task',
       label: 'Le call to action',
       type: 'text',
       required: true,
+      localized: true,
     },
   ],
 }

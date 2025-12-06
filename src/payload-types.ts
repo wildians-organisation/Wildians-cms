@@ -104,10 +104,10 @@ export interface Config {
   db: {
     defaultIDType: number;
   };
-  fallbackLocale: null;
+  fallbackLocale: ('false' | 'none' | 'null') | false | null | ('fr' | 'en') | ('fr' | 'en')[];
   globals: {};
   globalsSelect: {};
-  locale: null;
+  locale: 'fr' | 'en';
   user: Admin & {
     collection: 'admins';
   };
@@ -223,7 +223,7 @@ export interface Quizzes {
   questions?:
     | {
         question: string;
-        anwswers: string;
+        answers: string;
         anwswer: number;
         explanation?: {
           root: {
@@ -414,7 +414,7 @@ export interface Lesson {
             questions?:
               | {
                   question: string;
-                  anwswers: string;
+                  answers: string;
                   anwswer: number;
                   explanation?: {
                     root: {
@@ -643,7 +643,7 @@ export interface LessonsSelect<T extends boolean = true> {
                 | T
                 | {
                     question?: T;
-                    anwswers?: T;
+                    answers?: T;
                     anwswer?: T;
                     explanation?: T;
                     id?: T;

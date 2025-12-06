@@ -21,13 +21,16 @@ export const Lessons: CollectionConfig = {
     },
     {
       name: 'name',
+      label: 'Nom de la capsule',
       type: 'text',
       required: true,
+      localized: true,
     },
     {
       name: 'description',
       type: 'text',
       required: true,
+      localized: true,
     },
     {
       name: 'image',
