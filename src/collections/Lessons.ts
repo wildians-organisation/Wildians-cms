@@ -1,4 +1,5 @@
 import type { CollectionConfig } from 'payload'
+import { isContentAdmin, isContentReviewer } from '../access/roles'
 import { Chapters } from './Chapters'
 import { Quests } from './Quests'
 import { Habits } from './Habits'
@@ -8,8 +9,14 @@ export const Lessons: CollectionConfig = {
   slug: 'lessons',
   admin: {
     useAsTitle: 'name',
-    description: 'En fait ca s\'appelle Lessons mais ca représente les capsules 🫢',
+    description: "En fait ca s'appelle Lessons mais ca représente les capsules 🫢",
     listSearchableFields: ['name'],
+  },
+  access: {
+    read: isContentReviewer,
+    create: isContentAdmin,
+    update: isContentAdmin,
+    delete: isContentAdmin,
   },
   fields: [
     {
@@ -46,23 +53,7 @@ export const Lessons: CollectionConfig = {
       type: 'blocks',
       minRows: 1,
       maxRows: 20,
-      blocks: [
-        Chapters,
-        Quests,
-        Habits,
-        Quizzes,
-      ],
+      blocks: [Chapters, Quests, Habits, Quizzes],
     },
-    // {
-    //   name: 'Contenus',
-    //   type: 'join',
-    //   collection: [Chapters.slug, Quests.slug],
-    //   on: 'lesson',
-    //   // orderable: true,
-    //   admin: {
-    //     allowCreate: true,
-    //     defaultColumns: ['title', 'content'],
-    //   },
-    // },
   ],
 }

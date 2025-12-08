@@ -26,6 +26,24 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
+  async onInit(payload) {
+    // Seed first super_admin if no admins exist
+    const existingAdmins = await payload.find({
+      collection: 'admins',
+      limit: 1,
+    })
+    if (existingAdmins.totalDocs === 0) {
+      await payload.create({
+        collection: 'admins',
+        data: {
+          email: 'maxime@wildians.org',
+          password: crypto.randomUUID(), // Random password, use "Forgot Password" to set
+          role: 'super_admin',
+        },
+      })
+      payload.logger.info('Created initial super_admin: maxime@wildians.org')
+    }
+  },
   localization: {
     locales: ['fr', 'en'],
     defaultLocale: 'fr',
