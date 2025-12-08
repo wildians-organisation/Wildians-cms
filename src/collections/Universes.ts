@@ -6,6 +6,10 @@ export const Universes: CollectionConfig = {
   admin: {
     useAsTitle: 'name',
   },
+  versions: {
+    maxPerDoc: 50,
+    drafts: true,
+  },
   access: {
     read: isContentReviewer,
     create: isContentAdmin,
@@ -36,5 +40,5 @@ export const Universes: CollectionConfig = {
         allowCreate: true,
       },
     },
-  ],
+  ]
 }

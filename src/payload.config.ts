@@ -76,8 +76,8 @@ export default buildConfig({
     locales: ['fr', 'en'],
     defaultLocale: 'fr',
   },
-  blocks: [Chapters, Quests, Habits, Quizzes],
-  collections: [Admins, Media, Universes, Journeys, Lessons],
+  blocks: [Lessons, Chapters, Quests, Habits, Quizzes],
+  collections: [Admins, Media, Universes, Journeys, ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
@@ -85,6 +85,7 @@ export default buildConfig({
   },
   db: postgresAdapter({
     schemaName: 'content',
+    idType: 'uuid',
     pool: {
       connectionString: process.env.DATABASE_URI || '',
     },

@@ -66,17 +66,13 @@ export interface Config {
     admins: AdminAuthOperations;
   };
   blocks: {
-    chapters: Chapters;
-    quests: Quests;
-    habits: Habits;
-    quizzes: Quizzes;
+    lessons: Lessons;
   };
   collections: {
     admins: Admin;
     media: Media;
     universes: Universe;
     journeys: Journey;
-    lessons: Lesson;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -86,23 +82,19 @@ export interface Config {
     universes: {
       journeys: 'journeys';
     };
-    journeys: {
-      lessons: 'lessons';
-    };
   };
   collectionsSelect: {
     admins: AdminsSelect<false> | AdminsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     universes: UniversesSelect<false> | UniversesSelect<true>;
     journeys: JourneysSelect<false> | JourneysSelect<true>;
-    lessons: LessonsSelect<false> | LessonsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
   };
   db: {
-    defaultIDType: number;
+    defaultIDType: string;
   };
   fallbackLocale: ('false' | 'none' | 'null') | false | null | ('fr' | 'en') | ('fr' | 'en')[];
   globals: {};
@@ -136,214 +128,12 @@ export interface AdminAuthOperations {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "chapters".
- */
-export interface Chapters {
-  title: string;
-  content: {
-    root: {
-      type: string;
-      children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  };
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'chapters';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "quests".
- */
-export interface Quests {
-  title: string;
-  content: {
-    root: {
-      type: string;
-      children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  };
-  task: string;
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'quests';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "habits".
- */
-export interface Habits {
-  title: string;
-  content: {
-    root: {
-      type: string;
-      children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  };
-  task: string;
-  duration: number;
-  eco2Reduced?: number | null;
-  moneySaved?: number | null;
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'habits';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "quizzes".
- */
-export interface Quizzes {
-  title: string;
-  questions?:
-    | {
-        question: string;
-        answers: string;
-        anwswer: number;
-        explanation?: {
-          root: {
-            type: string;
-            children: {
-              type: any;
-              version: number;
-              [k: string]: unknown;
-            }[];
-            direction: ('ltr' | 'rtl') | null;
-            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-            indent: number;
-            version: number;
-          };
-          [k: string]: unknown;
-        } | null;
-        id?: string | null;
-      }[]
-    | null;
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'quizzes';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "admins".
- */
-export interface Admin {
-  id: number;
-  name?: string | null;
-  /**
-   * Super Admin: full access | Content Admin: create/edit content | Content Reviewer: read-only
-   */
-  role: 'super_admin' | 'content_admin' | 'content_reviewer';
-  updatedAt: string;
-  createdAt: string;
-  email: string;
-  resetPasswordToken?: string | null;
-  resetPasswordExpiration?: string | null;
-  salt?: string | null;
-  hash?: string | null;
-  loginAttempts?: number | null;
-  lockUntil?: string | null;
-  sessions?:
-    | {
-        id: string;
-        createdAt?: string | null;
-        expiresAt: string;
-      }[]
-    | null;
-  password?: string | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "media".
- */
-export interface Media {
-  id: number;
-  alt: string;
-  updatedAt: string;
-  createdAt: string;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  focalX?: number | null;
-  focalY?: number | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "universes".
- */
-export interface Universe {
-  id: number;
-  name: string;
-  description: string;
-  journeys?: {
-    docs?: (number | Journey)[];
-    hasNextPage?: boolean;
-    totalDocs?: number;
-  };
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * Vas-y Eléa, ponds nous des supers parcours !!
- *
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "journeys".
- */
-export interface Journey {
-  id: number;
-  _journeys_journeys_order?: string | null;
-  universe: number | Universe;
-  name: string;
-  description: string;
-  lessons?: {
-    docs?: (number | Lesson)[];
-    hasNextPage?: boolean;
-    totalDocs?: number;
-  };
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * En fait ca s'appelle Lessons mais ca représente les capsules 🫢
- *
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "lessons".
  */
-export interface Lesson {
-  id: number;
-  _lessons_lessons_order?: string | null;
-  journey: number | Journey;
+export interface Lessons {
   name: string;
   description: string;
-  image?: (number | null) | Media;
+  image?: (string | null) | Media;
   contents?:
     | (
         | {
@@ -445,15 +235,208 @@ export interface Lesson {
           }
       )[]
     | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'lessons';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "media".
+ */
+export interface Media {
+  id: string;
+  alt: string;
   updatedAt: string;
   createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename?: string | null;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "admins".
+ */
+export interface Admin {
+  id: string;
+  name?: string | null;
+  /**
+   * Super Admin: full access | Content Admin: create/edit content | Content Reviewer: read-only
+   */
+  role: 'super_admin' | 'content_admin' | 'content_reviewer';
+  updatedAt: string;
+  createdAt: string;
+  email: string;
+  resetPasswordToken?: string | null;
+  resetPasswordExpiration?: string | null;
+  salt?: string | null;
+  hash?: string | null;
+  loginAttempts?: number | null;
+  lockUntil?: string | null;
+  sessions?:
+    | {
+        id: string;
+        createdAt?: string | null;
+        expiresAt: string;
+      }[]
+    | null;
+  password?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "universes".
+ */
+export interface Universe {
+  id: string;
+  name: string;
+  description: string;
+  journeys?: {
+    docs?: (string | Journey)[];
+    hasNextPage?: boolean;
+    totalDocs?: number;
+  };
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * Vas-y Eléa, ponds nous des supers parcours !!
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "journeys".
+ */
+export interface Journey {
+  id: string;
+  _journeys_journeys_order?: string | null;
+  universe: string | Universe;
+  name: string;
+  description: string;
+  lessons?:
+    | {
+        name: string;
+        description: string;
+        image?: (string | null) | Media;
+        contents?:
+          | (
+              | {
+                  title: string;
+                  content: {
+                    root: {
+                      type: string;
+                      children: {
+                        type: any;
+                        version: number;
+                        [k: string]: unknown;
+                      }[];
+                      direction: ('ltr' | 'rtl') | null;
+                      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                      indent: number;
+                      version: number;
+                    };
+                    [k: string]: unknown;
+                  };
+                  id?: string | null;
+                  blockName?: string | null;
+                  blockType: 'chapters';
+                }
+              | {
+                  title: string;
+                  content: {
+                    root: {
+                      type: string;
+                      children: {
+                        type: any;
+                        version: number;
+                        [k: string]: unknown;
+                      }[];
+                      direction: ('ltr' | 'rtl') | null;
+                      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                      indent: number;
+                      version: number;
+                    };
+                    [k: string]: unknown;
+                  };
+                  task: string;
+                  id?: string | null;
+                  blockName?: string | null;
+                  blockType: 'quests';
+                }
+              | {
+                  title: string;
+                  content: {
+                    root: {
+                      type: string;
+                      children: {
+                        type: any;
+                        version: number;
+                        [k: string]: unknown;
+                      }[];
+                      direction: ('ltr' | 'rtl') | null;
+                      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                      indent: number;
+                      version: number;
+                    };
+                    [k: string]: unknown;
+                  };
+                  task: string;
+                  duration: number;
+                  eco2Reduced?: number | null;
+                  moneySaved?: number | null;
+                  id?: string | null;
+                  blockName?: string | null;
+                  blockType: 'habits';
+                }
+              | {
+                  title: string;
+                  questions?:
+                    | {
+                        question: string;
+                        answers: string;
+                        anwswer: number;
+                        explanation?: {
+                          root: {
+                            type: string;
+                            children: {
+                              type: any;
+                              version: number;
+                              [k: string]: unknown;
+                            }[];
+                            direction: ('ltr' | 'rtl') | null;
+                            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                            indent: number;
+                            version: number;
+                          };
+                          [k: string]: unknown;
+                        } | null;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                  blockName?: string | null;
+                  blockType: 'quizzes';
+                }
+            )[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'lessons';
+      }[]
+    | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
-  id: number;
+  id: string;
   key: string;
   data:
     | {
@@ -470,32 +453,28 @@ export interface PayloadKv {
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
-  id: number;
+  id: string;
   document?:
     | ({
         relationTo: 'admins';
-        value: number | Admin;
+        value: string | Admin;
       } | null)
     | ({
         relationTo: 'media';
-        value: number | Media;
+        value: string | Media;
       } | null)
     | ({
         relationTo: 'universes';
-        value: number | Universe;
+        value: string | Universe;
       } | null)
     | ({
         relationTo: 'journeys';
-        value: number | Journey;
-      } | null)
-    | ({
-        relationTo: 'lessons';
-        value: number | Lesson;
+        value: string | Journey;
       } | null);
   globalSlug?: string | null;
   user: {
     relationTo: 'admins';
-    value: number | Admin;
+    value: string | Admin;
   };
   updatedAt: string;
   createdAt: string;
@@ -505,10 +484,10 @@ export interface PayloadLockedDocument {
  * via the `definition` "payload-preferences".
  */
 export interface PayloadPreference {
-  id: number;
+  id: string;
   user: {
     relationTo: 'admins';
-    value: number | Admin;
+    value: string | Admin;
   };
   key?: string | null;
   value?:
@@ -528,7 +507,7 @@ export interface PayloadPreference {
  * via the `definition` "payload-migrations".
  */
 export interface PayloadMigration {
-  id: number;
+  id: string;
   name?: string | null;
   batch?: number | null;
   updatedAt: string;
@@ -586,6 +565,7 @@ export interface UniversesSelect<T extends boolean = true> {
   journeys?: T;
   updatedAt?: T;
   createdAt?: T;
+  _status?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -596,64 +576,63 @@ export interface JourneysSelect<T extends boolean = true> {
   universe?: T;
   name?: T;
   description?: T;
-  lessons?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "lessons_select".
- */
-export interface LessonsSelect<T extends boolean = true> {
-  _lessons_lessons_order?: T;
-  journey?: T;
-  name?: T;
-  description?: T;
-  image?: T;
-  contents?:
+  lessons?:
     | T
     | {
-        chapters?:
+        lessons?:
           | T
           | {
-              title?: T;
-              content?: T;
-              id?: T;
-              blockName?: T;
-            };
-        quests?:
-          | T
-          | {
-              title?: T;
-              content?: T;
-              task?: T;
-              id?: T;
-              blockName?: T;
-            };
-        habits?:
-          | T
-          | {
-              title?: T;
-              content?: T;
-              task?: T;
-              duration?: T;
-              eco2Reduced?: T;
-              moneySaved?: T;
-              id?: T;
-              blockName?: T;
-            };
-        quizzes?:
-          | T
-          | {
-              title?: T;
-              questions?:
+              name?: T;
+              description?: T;
+              image?: T;
+              contents?:
                 | T
                 | {
-                    question?: T;
-                    answers?: T;
-                    anwswer?: T;
-                    explanation?: T;
-                    id?: T;
+                    chapters?:
+                      | T
+                      | {
+                          title?: T;
+                          content?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    quests?:
+                      | T
+                      | {
+                          title?: T;
+                          content?: T;
+                          task?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    habits?:
+                      | T
+                      | {
+                          title?: T;
+                          content?: T;
+                          task?: T;
+                          duration?: T;
+                          eco2Reduced?: T;
+                          moneySaved?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
+                    quizzes?:
+                      | T
+                      | {
+                          title?: T;
+                          questions?:
+                            | T
+                            | {
+                                question?: T;
+                                answers?: T;
+                                anwswer?: T;
+                                explanation?: T;
+                                id?: T;
+                              };
+                          id?: T;
+                          blockName?: T;
+                        };
                   };
               id?: T;
               blockName?: T;
@@ -661,6 +640,7 @@ export interface LessonsSelect<T extends boolean = true> {
       };
   updatedAt?: T;
   createdAt?: T;
+  _status?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

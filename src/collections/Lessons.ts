@@ -1,31 +1,13 @@
-import type { CollectionConfig } from 'payload'
-import { isContentAdmin, isContentReviewer } from '../access/roles'
+import type { Block } from 'payload'
 import { Chapters } from './Chapters'
 import { Quests } from './Quests'
 import { Habits } from './Habits'
 import { Quizzes } from './Quizzes'
 
-export const Lessons: CollectionConfig = {
+export const Lessons: Block = {
   slug: 'lessons',
-  admin: {
-    useAsTitle: 'name',
-    description: "En fait ca s'appelle Lessons mais ca représente les capsules 🫢",
-    listSearchableFields: ['name'],
-  },
-  access: {
-    read: isContentReviewer,
-    create: isContentAdmin,
-    update: isContentAdmin,
-    delete: isContentAdmin,
-  },
+  dbName: 'lessons',
   fields: [
-    {
-      name: 'journey',
-      label: 'Parcours associé',
-      type: 'relationship',
-      relationTo: 'journeys',
-      required: true,
-    },
     {
       name: 'name',
       label: 'Nom de la capsule',

@@ -1,5 +1,6 @@
 import type { CollectionConfig } from 'payload'
 import { isContentAdmin, isContentReviewer } from '../access/roles'
+import { Lessons } from './Lessons'
 
 export const Journeys: CollectionConfig = {
   slug: 'journeys',
@@ -12,6 +13,10 @@ export const Journeys: CollectionConfig = {
     create: isContentAdmin,
     update: isContentAdmin,
     delete: isContentAdmin,
+  },
+  versions: {
+    maxPerDoc: 50,
+    drafts: true,
   },
   fields: [
     {
@@ -35,13 +40,11 @@ export const Journeys: CollectionConfig = {
     },
     {
       name: 'lessons',
-      type: 'join',
-      collection: 'lessons',
-      on: 'journey',
-      orderable: true,
-      admin: {
-        allowCreate: true,
-      },
+      label: 'Capsules du parcours',
+      type: 'blocks',
+      minRows: 1,
+      maxRows: 20,
+      blocks: [Lessons],
     },
-  ],
+  ]
 }
