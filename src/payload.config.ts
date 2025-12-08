@@ -27,30 +27,49 @@ export default buildConfig({
     },
   },
   async onInit(payload) {
-    // Seed super_admin from env vars if no admins exist
+    // Ensure ADMIN_EMAIL always exists as super_admin
     const adminEmail = process.env.ADMIN_EMAIL
     const adminPassword = process.env.ADMIN_PASSWORD
 
-    if (!adminEmail || !adminPassword) {
-      payload.logger.warn('ADMIN_EMAIL and ADMIN_PASSWORD env vars not set - skipping admin seeding')
+    if (!adminEmail) {
+      payload.logger.warn('ADMIN_EMAIL env var not set - skipping admin check')
       return
     }
 
-    const existingAdmins = await payload.find({
+    // Find admin by exact email match
+    const result = await payload.find({
       collection: 'admins',
+      where: { email: { equals: adminEmail } },
       limit: 1,
     })
 
-    if (existingAdmins.totalDocs === 0) {
+    // Double-check email matches (defense in depth)
+    const existingAdmin = result.docs.find((doc) => doc.email === adminEmail)
+
+    if (!existingAdmin) {
+      // Admin with this email doesn't exist - create it
+      if (!adminPassword) {
+        payload.logger.error(`ADMIN_PASSWORD required to create admin: ${adminEmail}`)
+        return
+      }
       await payload.create({
         collection: 'admins',
         data: {
           email: adminEmail,
           password: adminPassword,
           role: 'super_admin',
+          name: 'Maxime Colomès',
         },
       })
-      payload.logger.info(`Created initial super_admin: ${adminEmail}`)
+      payload.logger.info(`Created super_admin: ${adminEmail}`)
+    } else if (existingAdmin.role !== 'super_admin') {
+      // Admin exists but is not super_admin - update role
+      await payload.update({
+        collection: 'admins',
+        id: existingAdmin.id,
+        data: { role: 'super_admin' },
+      })
+      payload.logger.info(`Updated ${adminEmail} role to super_admin`)
     }
   },
   localization: {
