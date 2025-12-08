@@ -27,21 +27,30 @@ export default buildConfig({
     },
   },
   async onInit(payload) {
-    // Seed first super_admin if no admins exist
+    // Seed super_admin from env vars if no admins exist
+    const adminEmail = process.env.ADMIN_EMAIL
+    const adminPassword = process.env.ADMIN_PASSWORD
+
+    if (!adminEmail || !adminPassword) {
+      payload.logger.warn('ADMIN_EMAIL and ADMIN_PASSWORD env vars not set - skipping admin seeding')
+      return
+    }
+
     const existingAdmins = await payload.find({
       collection: 'admins',
       limit: 1,
     })
+
     if (existingAdmins.totalDocs === 0) {
       await payload.create({
         collection: 'admins',
         data: {
-          email: 'maxime@wildians.org',
-          password: crypto.randomUUID(), // Random password, use "Forgot Password" to set
+          email: adminEmail,
+          password: adminPassword,
           role: 'super_admin',
         },
       })
-      payload.logger.info('Created initial super_admin: maxime@wildians.org')
+      payload.logger.info(`Created initial super_admin: ${adminEmail}`)
     }
   },
   localization: {
