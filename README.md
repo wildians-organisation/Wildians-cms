@@ -1,67 +1,126 @@
-# Payload Blank Template
+# Wildians CMS
 
-This template comes configured with the bare minimum to get started on anything you need.
+Content Management System built with [Payload CMS](https://payloadcms.com/) 3.0, PostgreSQL (Supabase), and S3 storage.
 
-## Quick start
+## Tech Stack
 
-This template can be deployed directly from our Cloud hosting and it will setup MongoDB and cloud S3 object storage for media.
+- **CMS**: Payload CMS 3.0
+- **Framework**: Next.js 15
+- **Database**: PostgreSQL (Supabase)
+- **Storage**: S3 (optional)
+- **Package Manager**: pnpm
 
-## Quick Start - local setup
+## Quick Start
 
-To spin up this template locally, follow these steps:
+### Prerequisites
 
-### Clone
+- Node.js 20+
+- pnpm (`brew install pnpm`)
+- Docker Desktop (for local Supabase)
 
-After you click the `Deploy` button above, you'll want to have standalone copy of this repo on your machine. If you've already cloned this repo, skip to [Development](#development).
+### Local Development
 
-### Development
+1. **Clone and install dependencies**
 
-1. First [clone the repo](#clone) if you have not done so already
-2. `cd my-project && cp .env.example .env` to copy the example environment variables. You'll need to add the `MONGODB_URI` from your Cloud project to your `.env` if you want to use S3 storage and the MongoDB database that was created for you.
+   ```bash
+   git clone <repo-url>
+   cd Wildians-cms
+   pnpm install
+   ```
 
-3. `pnpm install && pnpm dev` to install dependencies and start the dev server
-4. open `http://localhost:3000` to open the app in your browser
+2. **Set up environment variables**
 
-That's it! Changes made in `./src` will be reflected in your app. Follow the on-screen instructions to login and create your first admin user. Then check out [Production](#production) once you're ready to build and serve your app, and [Deployment](#deployment) when you're ready to go live.
+   ```bash
+   cp .env.example .env
+   ```
 
-#### Docker (Optional)
+3. **Start local Supabase**
 
-If you prefer to use Docker for local development instead of a local MongoDB instance, the provided docker-compose.yml file can be used.
+   ```bash
+   supabase start
+   ```
 
-To do so, follow these steps:
+   This will output your local database URL. Update `.env`:
 
-- Modify the `MONGODB_URI` in your `.env` file to `mongodb://127.0.0.1/<dbname>`
-- Modify the `docker-compose.yml` file's `MONGODB_URI` to match the above `<dbname>`
-- Run `docker-compose up` to start the database, optionally pass `-d` to run in the background.
+   ```
+   DATABASE_URI=postgresql://postgres:postgres@127.0.0.1:54322/postgres
+   ```
 
-## How it works
+4. **Start the dev server**
 
-The Payload config is tailored specifically to the needs of most websites. It is pre-configured in the following ways:
+   ```bash
+   pnpm dev
+   ```
 
-### Collections
+5. **Open the app**
 
-See the [Collections](https://payloadcms.com/docs/configuration/collections) docs for details on how to extend this functionality.
+   - Frontend: http://localhost:3000
+   - Admin Panel: http://localhost:3000/admin
+   - Supabase Studio: http://127.0.0.1:54323
 
-- #### Users (Authentication)
+### Supabase Commands
 
-  Users are auth-enabled collections that have access to the admin panel.
+```bash
+supabase start     # Start local Supabase
+supabase stop      # Stop all services
+supabase status    # Check running services
+supabase db reset  # Reset database to initial state
+```
 
-  For additional help, see the official [Auth Example](https://github.com/payloadcms/payload/tree/main/examples/auth) or the [Authentication](https://payloadcms.com/docs/authentication/overview#authentication-overview) docs.
+## Environment Variables
 
-- #### Media
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `DATABASE_URI` | PostgreSQL connection string | Yes |
+| `PAYLOAD_SECRET` | Secret key for Payload (generate with `openssl rand -base64 32`) | Yes |
+| `S3_BUCKET` | S3 bucket name | No |
+| `S3_ACCESS_KEY_ID` | S3 access key | No |
+| `S3_SECRET_ACCESS_KEY` | S3 secret key | No |
+| `S3_REGION` | S3 region | No |
+| `S3_ENDPOINT` | Custom S3 endpoint (for S3-compatible services) | No |
+| `NEXT_PUBLIC_SERVER_URL` | Public server URL | No |
 
-  This is the uploads enabled collection. It features pre-configured sizes, focal point and manual resizing to help you manage your pictures.
+## Docker
 
-### Docker
+### Development with Docker
 
-Alternatively, you can use [Docker](https://www.docker.com) to spin up this template locally. To do so, follow these steps:
+```bash
+docker compose up
+```
 
-1. Follow [steps 1 and 2 from above](#development), the docker-compose file will automatically use the `.env` file in your project root
-1. Next run `docker-compose up`
-1. Follow [steps 4 and 5 from above](#development) to login and create your first admin user
+This mounts your local files and runs the dev server with hot reload.
 
-That's it! The Docker instance will help you get up and running quickly while also standardizing the development environment across your teams.
+### Production Build
 
-## Questions
+The Dockerfile is configured for standalone Next.js builds, optimized for deployment on platforms like Coolify.
 
-If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).
+```bash
+docker build -t wildians-cms .
+docker run -p 3000:3000 --env-file .env wildians-cms
+```
+
+## Collections
+
+- **Admins** - Admin users with authentication
+- **Media** - Uploads with image processing
+- **Universes** - Content universes
+- **Journeys** - Learning journeys
+- **Lessons** - Individual lessons
+
+## Production (Supabase Cloud)
+
+For production, use Supabase Cloud:
+
+1. Create a project at [supabase.com](https://supabase.com)
+2. Get your connection string from Settings > Database
+3. Update `DATABASE_URI` in your production environment:
+
+   ```
+   DATABASE_URI=postgresql://postgres.[PROJECT-REF]:[PASSWORD]@aws-0-[REGION].pooler.supabase.com:6543/postgres
+   ```
+
+## Resources
+
+- [Payload CMS Docs](https://payloadcms.com/docs)
+- [Supabase Docs](https://supabase.com/docs)
+- [Next.js Docs](https://nextjs.org/docs)
