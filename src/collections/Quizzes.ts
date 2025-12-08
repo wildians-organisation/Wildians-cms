@@ -1,3 +1,4 @@
+import answersField from '@/fields/AnswersField'
 import type { Block, Field } from 'payload'
 
 export const QuestionsField: Field = {
@@ -14,19 +15,17 @@ export const QuestionsField: Field = {
       required: true,
       localized: true,
     },
-    {
+    answersField({
       name: 'answers',
       label: 'Les réponses possibles',
-      type: 'textarea',
       required: true,
       localized: true,
-    },
+    }),
     {
-      name: 'anwswer',
-      label: 'La bonne réponse',
-      type: 'number',
+      name: 'correctAnswers',
+      label: 'Réponses correctes (numéros séparés par des virgules, ex: 1,3)',
+      type: 'text',
       required: true,
-      localized: true,
     },
     {
       name: 'explanation',

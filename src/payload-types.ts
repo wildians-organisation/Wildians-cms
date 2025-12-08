@@ -209,8 +209,16 @@ export interface Lessons {
             questions?:
               | {
                   question: string;
-                  answers: string;
-                  anwswer: number;
+                  answers:
+                    | {
+                        [k: string]: unknown;
+                      }
+                    | unknown[]
+                    | string
+                    | number
+                    | boolean
+                    | null;
+                  correctAnswers: string;
                   explanation?: {
                     root: {
                       type: string;
@@ -396,8 +404,16 @@ export interface Journey {
                   questions?:
                     | {
                         question: string;
-                        answers: string;
-                        anwswer: number;
+                        answers:
+                          | {
+                              [k: string]: unknown;
+                            }
+                          | unknown[]
+                          | string
+                          | number
+                          | boolean
+                          | null;
+                        correctAnswers: string;
                         explanation?: {
                           root: {
                             type: string;
@@ -626,7 +642,7 @@ export interface JourneysSelect<T extends boolean = true> {
                             | {
                                 question?: T;
                                 answers?: T;
-                                anwswer?: T;
+                                correctAnswers?: T;
                                 explanation?: T;
                                 id?: T;
                               };
