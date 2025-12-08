@@ -253,6 +253,11 @@ export interface Quizzes {
  */
 export interface Admin {
   id: number;
+  name?: string | null;
+  /**
+   * Super Admin: full access | Content Admin: create/edit content | Content Reviewer: read-only
+   */
+  role: 'super_admin' | 'content_admin' | 'content_reviewer';
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -534,6 +539,8 @@ export interface PayloadMigration {
  * via the `definition` "admins_select".
  */
 export interface AdminsSelect<T extends boolean = true> {
+  name?: T;
+  role?: T;
   updatedAt?: T;
   createdAt?: T;
   email?: T;
