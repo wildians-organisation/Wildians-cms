@@ -1,0 +1,25 @@
+{
+  "collection": "chapters_translations",
+  "field": "chapters_id",
+  "related_collection": "chapters",
+  "meta": {
+    "junction_field": "languages_code",
+    "many_collection": "chapters_translations",
+    "many_field": "chapters_id",
+    "one_allowed_collections": null,
+    "one_collection": "chapters",
+    "one_collection_field": null,
+    "one_deselect_action": "delete",
+    "one_field": "translations",
+    "sort_field": null
+  },
+  "schema": {
+    "table": "chapters_translations",
+    "column": "chapters_id",
+    "foreign_key_table": "chapters",
+    "foreign_key_column": "id",
+    "constraint_name": "chapters_translations_chapters_id_foreign",
+    "on_update": "NO ACTION",
+    "on_delete": "CASCADE"
+  }
+}

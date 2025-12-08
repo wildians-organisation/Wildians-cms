@@ -1,32 +1,43 @@
 services:
-  payload:
-    image: node:22-alpine
+  directus:
+    image: directus/directus:11.14.0
+    restart: unless-stopped
     ports:
-      - '3000:3000'
+      - ${DIRECTUS_PORT}:${DIRECTUS_PORT}
     volumes:
-      - .:/home/node/app
-      - node_modules:/home/node/app/node_modules
-    working_dir: /home/node/app/
-    command: sh -c "corepack enable && corepack prepare pnpm@latest --activate && pnpm install && pnpm dev"
-    env_file:
-      - .env
-    # Uncomment if using local PostgreSQL
-    # depends_on:
-    #   - postgres
+      - directus_uploads:/directus/uploads
+      - directus_extensions:/directus/extensions
+    environment:
+      SECRET: ${DIRECTUS_SECRET}
 
-  # Local PostgreSQL for development (optional)
-  # Uncomment to use instead of Supabase Cloud
-  # postgres:
-  #   image: postgres:16-alpine
-  #   ports:
-  #     - '5432:5432'
-  #   environment:
-  #     POSTGRES_USER: postgres
-  #     POSTGRES_PASSWORD: postgres
-  #     POSTGRES_DB: wildians
-  #   volumes:
-  #     - pgdata:/var/lib/postgresql/data
+      DB_CLIENT: "pg"
+      DB_CONNECTION_STRING: ${DB_CONNECTION_STRING}
+      DB_SEARCH_PATH: "content"
+      DB_SCHEMA: "content"
+
+      # How many days to retain revisions
+      REVISIONS_RETENTION: 90d
+      MARKETPLACE_TRUST: all
+
+      CACHE_ENABLED: "false"
+      # CACHE_AUTO_PURGE: "true"
+      # CACHE_STORE: "redis"
+      # REDIS: "redis://cache:6379"
+
+      ADMIN_EMAIL: ${ADMIN_EMAIL}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+
+      # Storage configuration (Supabase)
+      STORAGE_LOCATIONS: "supabase"
+      STORAGE_SUPABASE_DRIVER: "s3"
+      STORAGE_SUPABASE_KEY: ${SUPABASE_S3_KEY}
+      STORAGE_SUPABASE_SECRET: ${SUPABASE_S3_SECRET}
+      STORAGE_SUPABASE_BUCKET: "directus"
+      STORAGE_SUPABASE_REGION: "eu-west-3"
+      STORAGE_SUPABASE_ENDPOINT: "https://ctelybxlufsxpzrlstlw.storage.supabase.co/storage/v1/s3"
+      STORAGE_SUPABASE_FORCE_PATH_STYLE: "true"
 
 volumes:
-  node_modules:
-  # pgdata:
+  directus_uploads:
+  directus_extensions:
+    

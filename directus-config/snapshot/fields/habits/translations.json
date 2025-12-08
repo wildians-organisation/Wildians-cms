@@ -1,0 +1,31 @@
+{
+  "collection": "habits",
+  "field": "translations",
+  "type": "alias",
+  "meta": {
+    "collection": "habits",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "translations",
+    "group": null,
+    "hidden": false,
+    "interface": "translations",
+    "note": null,
+    "options": {
+      "defaultLanguage": "fr-FR",
+      "languageField": "name"
+    },
+    "readonly": false,
+    "required": true,
+    "searchable": true,
+    "sort": 5,
+    "special": [
+      "translations"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "collection": "lessons",
+  "field": "translations",
+  "type": "alias",
+  "meta": {
+    "collection": "lessons",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "translations",
+    "group": null,
+    "hidden": false,
+    "interface": "translations",
+    "note": null,
+    "options": {
+      "defaultLanguage": "fr-FR",
+      "languageField": "name"
+    },
+    "readonly": false,
+    "required": true,
+    "searchable": true,
+    "sort": 8,
+    "special": [
+      "translations"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}
