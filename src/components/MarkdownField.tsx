@@ -1,18 +1,10 @@
 'use client';
 
-import React, { useCallback } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import MDEditor from '@uiw/react-md-editor';
-import {
-    useField,
-    FieldLabel,
-    FieldError,
-    FieldDescription
-} from '@payloadcms/ui';
-import type { TextFieldClientProps, Validate } from 'payload';
-
+import { useField, FieldLabel, FieldError, FieldDescription } from '@payloadcms/ui';
+import { TextFieldClientProps, Validate } from 'payload';
 import './styles.css';
-
-const fieldBaseClass = 'field-type';
 
 const MarkdownField: React.FC<TextFieldClientProps> = (props) => {
     const {
@@ -29,9 +21,10 @@ const MarkdownField: React.FC<TextFieldClientProps> = (props) => {
                 placeholder,
             } = {},
         },
-        validate, // Server-side validator (undefined on client)
+        validate,
     } = props;
 
+    // 1. Validation Logic
     const memoizedValidate: Validate = useCallback((value, options) => {
         if (typeof validate === 'function') {
             return validate(value, {
@@ -40,20 +33,37 @@ const MarkdownField: React.FC<TextFieldClientProps> = (props) => {
                 name: ''
             });
         }
-        // Fallback client-side validation
         if (required && (!value || String(value).trim().length === 0)) {
             return 'This field is required.';
         }
         return true;
     }, [validate, required]);
 
-    const { value, setValue, showError, errorMessage } = useField<string>({
+    const { value: payloadValue, setValue, showError, errorMessage } = useField<string>({
         path,
         validate: memoizedValidate,
     });
 
+    const [localValue, setLocalValue] = useState(payloadValue || '');
+
+    useEffect(() => {
+        if (payloadValue !== undefined && payloadValue !== localValue) {
+            if (!localValue || localValue === '') {
+                setLocalValue(payloadValue);
+            }
+        }
+    }, [payloadValue]);
+
+    const handleChange = (val: string | undefined) => {
+        const newValue = val || '';
+
+        setLocalValue(newValue);
+
+        setValue(newValue);
+    };
+
     const classes = [
-        fieldBaseClass,
+        'field-type',
         'markdown-field',
         className,
         showError && 'error',
@@ -69,33 +79,26 @@ const MarkdownField: React.FC<TextFieldClientProps> = (props) => {
                 path={path}
             />
 
-            <div className={`${fieldBaseClass}__wrap`}>
-
-                <FieldError
-                    path={path}
-                    showError={showError}
-                    message={errorMessage}
-                />
+            <div className="field-type__wrap">
+                <FieldError path={path} showError={showError} message={errorMessage} />
 
                 <div className="markdown-input-container">
                     <MDEditor
-                        value={value || ''}
-                        onChange={(val) => {
-                            if (!readOnly) setValue(val || '');
-                        }}
+                        value={localValue}
+                        onChange={handleChange}
                         height={300}
                         preview="live"
+                        style={{
+                            '--md-editor-fullscreen-z-index': '9999'
+                        } as React.CSSProperties}
                         textareaProps={{
                             placeholder: placeholder ? String(placeholder) : undefined,
-                            disabled: readOnly
+                            disabled: readOnly,
                         }}
                     />
                 </div>
 
-                <FieldDescription
-                    path={path}
-                    description={description}
-                />
+                <FieldDescription path={path} description={description} />
             </div>
         </div>
     );
