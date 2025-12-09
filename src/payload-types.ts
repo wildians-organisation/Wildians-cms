@@ -138,42 +138,14 @@ export interface Lessons {
     | (
         | {
             title: string;
-            content: {
-              root: {
-                type: string;
-                children: {
-                  type: any;
-                  version: number;
-                  [k: string]: unknown;
-                }[];
-                direction: ('ltr' | 'rtl') | null;
-                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                indent: number;
-                version: number;
-              };
-              [k: string]: unknown;
-            };
+            content: string;
             id?: string | null;
             blockName?: string | null;
             blockType: 'chapters';
           }
         | {
             title: string;
-            content: {
-              root: {
-                type: string;
-                children: {
-                  type: any;
-                  version: number;
-                  [k: string]: unknown;
-                }[];
-                direction: ('ltr' | 'rtl') | null;
-                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                indent: number;
-                version: number;
-              };
-              [k: string]: unknown;
-            };
+            content: string;
             task: string;
             id?: string | null;
             blockName?: string | null;
@@ -181,21 +153,7 @@ export interface Lessons {
           }
         | {
             title: string;
-            content: {
-              root: {
-                type: string;
-                children: {
-                  type: any;
-                  version: number;
-                  [k: string]: unknown;
-                }[];
-                direction: ('ltr' | 'rtl') | null;
-                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                indent: number;
-                version: number;
-              };
-              [k: string]: unknown;
-            };
+            content: string;
             task: string;
             duration: number;
             eco2Reduced?: number | null;
@@ -209,23 +167,17 @@ export interface Lessons {
             questions?:
               | {
                   question: string;
-                  answers: string;
-                  anwswer: number;
-                  explanation?: {
-                    root: {
-                      type: string;
-                      children: {
-                        type: any;
-                        version: number;
+                  answers:
+                    | {
                         [k: string]: unknown;
-                      }[];
-                      direction: ('ltr' | 'rtl') | null;
-                      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                      indent: number;
-                      version: number;
-                    };
-                    [k: string]: unknown;
-                  } | null;
+                      }
+                    | unknown[]
+                    | string
+                    | number
+                    | boolean
+                    | null;
+                  correctAnswers: string;
+                  explanation: string;
                   id?: string | null;
                 }[]
               | null;
@@ -325,42 +277,14 @@ export interface Journey {
           | (
               | {
                   title: string;
-                  content: {
-                    root: {
-                      type: string;
-                      children: {
-                        type: any;
-                        version: number;
-                        [k: string]: unknown;
-                      }[];
-                      direction: ('ltr' | 'rtl') | null;
-                      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                      indent: number;
-                      version: number;
-                    };
-                    [k: string]: unknown;
-                  };
+                  content: string;
                   id?: string | null;
                   blockName?: string | null;
                   blockType: 'chapters';
                 }
               | {
                   title: string;
-                  content: {
-                    root: {
-                      type: string;
-                      children: {
-                        type: any;
-                        version: number;
-                        [k: string]: unknown;
-                      }[];
-                      direction: ('ltr' | 'rtl') | null;
-                      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                      indent: number;
-                      version: number;
-                    };
-                    [k: string]: unknown;
-                  };
+                  content: string;
                   task: string;
                   id?: string | null;
                   blockName?: string | null;
@@ -368,21 +292,7 @@ export interface Journey {
                 }
               | {
                   title: string;
-                  content: {
-                    root: {
-                      type: string;
-                      children: {
-                        type: any;
-                        version: number;
-                        [k: string]: unknown;
-                      }[];
-                      direction: ('ltr' | 'rtl') | null;
-                      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                      indent: number;
-                      version: number;
-                    };
-                    [k: string]: unknown;
-                  };
+                  content: string;
                   task: string;
                   duration: number;
                   eco2Reduced?: number | null;
@@ -396,23 +306,17 @@ export interface Journey {
                   questions?:
                     | {
                         question: string;
-                        answers: string;
-                        anwswer: number;
-                        explanation?: {
-                          root: {
-                            type: string;
-                            children: {
-                              type: any;
-                              version: number;
+                        answers:
+                          | {
                               [k: string]: unknown;
-                            }[];
-                            direction: ('ltr' | 'rtl') | null;
-                            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                            indent: number;
-                            version: number;
-                          };
-                          [k: string]: unknown;
-                        } | null;
+                            }
+                          | unknown[]
+                          | string
+                          | number
+                          | boolean
+                          | null;
+                        correctAnswers: string;
+                        explanation: string;
                         id?: string | null;
                       }[]
                     | null;
@@ -626,7 +530,7 @@ export interface JourneysSelect<T extends boolean = true> {
                             | {
                                 question?: T;
                                 answers?: T;
-                                anwswer?: T;
+                                correctAnswers?: T;
                                 explanation?: T;
                                 id?: T;
                               };
