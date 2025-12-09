@@ -3,6 +3,10 @@ import type { Block } from 'payload'
 export const Quests: Block = {
   slug: 'quests',
   dbName: 'quests',
+  labels: {
+    singular: 'Quête',
+    plural: 'Quêtes',
+  },
   fields: [
     {
       name: 'title',

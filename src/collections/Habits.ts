@@ -4,6 +4,10 @@ import type { Block } from 'payload'
 export const Habits: Block = {
   slug: 'habits',
   dbName: 'habits',
+  labels: {
+    singular: 'Habitude',
+    plural: 'Habitudes',
+  },
   fields: [
     {
       name: 'title',

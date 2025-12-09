@@ -39,6 +39,10 @@ export const QuestionsField: Field = {
 export const Quizzes: Block = {
   slug: 'quizzes',
   dbName: 'quizzes',
+  labels: {
+    singular: 'Quiz',
+    plural: 'Quizzes',
+  },
   fields: [
     {
       name: 'title',
