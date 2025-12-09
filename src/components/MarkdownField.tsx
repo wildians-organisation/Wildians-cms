@@ -1,76 +1,104 @@
-'use client'; // Essential for Payload v3
+'use client';
 
-import React from 'react';
+import React, { useCallback } from 'react';
 import MDEditor from '@uiw/react-md-editor';
-import { useField } from '@payloadcms/ui'; // For v3. Use 'payload/components/forms' for v2
+import {
+    useField,
+    FieldLabel,
+    FieldError,
+    FieldDescription
+} from '@payloadcms/ui';
+import type { TextFieldClientProps, Validate } from 'payload';
 
-const MarkdownField: React.FC<any> = (props) => {
-  const { 
-    path, 
-    label, 
-    required, 
-    validate, 
-    admin: { 
-      description, 
-      placeholder, 
-      style, 
-      className, 
-      readOnly 
-    } = {} 
-  } = props;
+import './styles.css';
 
-  // 1. Pass 'validate' to useField to ensure Payload's validation logic runs
-  const { value, setValue, errorMessage, showError } = useField<string>({ 
-    path, 
-    validate 
-  });
+const fieldBaseClass = 'field-type';
 
-  const classes = [
-    'field-type',
-    'markdown-field',
-    className,
-    showError && 'error',
-    readOnly && 'read-only',
-  ].filter(Boolean).join(' ');
+const MarkdownField: React.FC<TextFieldClientProps> = (props) => {
+    const {
+        path,
+        field: {
+            label,
+            required,
+            localized,
+            admin: {
+                description,
+                style,
+                className,
+                readOnly,
+                placeholder,
+            } = {},
+        },
+        validate, // Server-side validator (undefined on client)
+    } = props;
 
-  return (
-    <div className={classes} style={style}>
-      {/* 2. Standard Label Rendering */}
-      <label className="field-label" htmlFor={path}>
-        {label}
-        {required && <span className="required">*</span>}
-      </label>
+    const memoizedValidate: Validate = useCallback((value, options) => {
+        if (typeof validate === 'function') {
+            return validate(value, {
+                ...options, required,
+                type: 'text',
+                name: ''
+            });
+        }
+        // Fallback client-side validation
+        if (required && (!value || String(value).trim().length === 0)) {
+            return 'This field is required.';
+        }
+        return true;
+    }, [validate, required]);
 
-      <div className="markdown-wrap" style={{ position: 'relative', zIndex: 0 }}>
-        <MDEditor
-          value={value || ''}
-          onChange={(val) => {
-            if (!readOnly) setValue(val || '');
-          }}
-          height={400}
-          preview="live"
-          textareaProps={{
-            placeholder: placeholder ? String(placeholder) : undefined,
-            disabled: readOnly,
-          }}
-        />
-      </div>
+    const { value, setValue, showError, errorMessage } = useField<string>({
+        path,
+        validate: memoizedValidate,
+    });
 
-      {/* 3. Standard Error Message */}
-      {showError && (
-        <div className="field-error">
-          {errorMessage}
+    const classes = [
+        fieldBaseClass,
+        'markdown-field',
+        className,
+        showError && 'error',
+        readOnly && 'read-only',
+    ].filter(Boolean).join(' ');
+
+    return (
+        <div className={classes} style={style}>
+            <FieldLabel
+                label={label}
+                required={required}
+                localized={localized}
+                path={path}
+            />
+
+            <div className={`${fieldBaseClass}__wrap`}>
+
+                <FieldError
+                    path={path}
+                    showError={showError}
+                    message={errorMessage}
+                />
+
+                <div className="markdown-input-container">
+                    <MDEditor
+                        value={value || ''}
+                        onChange={(val) => {
+                            if (!readOnly) setValue(val || '');
+                        }}
+                        height={300}
+                        preview="live"
+                        textareaProps={{
+                            placeholder: placeholder ? String(placeholder) : undefined,
+                            disabled: readOnly
+                        }}
+                    />
+                </div>
+
+                <FieldDescription
+                    path={path}
+                    description={description}
+                />
+            </div>
         </div>
-      )}
-
-      {/* 4. Standard Description */}
-      {description && (
-        <div className="field-description">
-          {description}
-        </div>
-      )}
-    </div>
-  );
+    );
 };
 
 export default MarkdownField;

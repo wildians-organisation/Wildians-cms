@@ -1,6 +1,6 @@
 import { Field } from "payload"
 
-const answersField = (options: {
+const markdownField = (options: {
   name: string
   label?: string
   required?: boolean
@@ -8,16 +8,16 @@ const answersField = (options: {
 }): Field => {
   return {
     name: options.name,
-    type: 'json',
+    type: 'textarea',
     label: options.label,
     required: options.required,
     localized: options.localized,
     admin: {
       components: {
-        Field: '/components/AnswersFieldComponent',
+        Field: '/components/MarkdownField.tsx',
       },
     },
   }
 }
 
-export default answersField;
+export default markdownField;

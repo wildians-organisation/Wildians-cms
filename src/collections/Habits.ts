@@ -1,3 +1,4 @@
+import markdownField from '@/fields/MarkdownField'
 import { isInteger } from '@/validations'
 import type { Block } from 'payload'
 
@@ -16,13 +17,12 @@ export const Habits: Block = {
       required: true,
       localized: true,
     },
-    {
+    markdownField({
       name: 'content',
       label: 'Description juste en dessous du titre',
-      type: 'richText',
       required: true,
       localized: true,
-    },
+    }),
     {
       name: 'task',
       label: 'Le call to action',

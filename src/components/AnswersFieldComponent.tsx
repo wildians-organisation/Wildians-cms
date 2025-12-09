@@ -1,10 +1,17 @@
 'use client'
 
-import { useField, useLocale } from '@payloadcms/ui'
-import { Validate } from 'payload'
 import React, { useCallback, useEffect, useState } from 'react'
+import { 
+  useField, 
+  FieldLabel, 
+  FieldError, 
+  FieldDescription 
+} from '@payloadcms/ui'
+import { Validate, TextFieldClientProps } from 'payload'
 
-// Helper to create unique keys
+import './styles.css' // We will add a tiny bit of CSS below
+
+// Helper to generate unique IDs for React keys
 const generateId = () => Math.random().toString(36).substr(2, 9)
 
 type AnswerRow = {
@@ -12,38 +19,76 @@ type AnswerRow = {
   text: string
 }
 
-// We accept 'field' prop now to check if it is localized
-type Props = {
-  path: string
-  field: {
-    localized?: boolean
-    validate?: Validate,
-    [key: string]: any
-  }
-}
+const AnswersFieldComponent: React.FC<TextFieldClientProps> = (props) => {
+  const {
+    path,
+    field: {
+      label,
+      required,
+      localized,
+      admin: {
+        description,
+        style,
+        className,
+        readOnly,
+        placeholder,
+      } = {},
+    },
+    validate, 
+  } = props
 
-const AnswersFieldComponent: React.FC<Props> = ({ path, field }) => {
-  const { value, setValue } = useField<string[]>({ path, validate: field.validate })
-  const locale = useLocale()
-  
+  // 1. Validation Logic
+  const memoizedValidate: Validate = useCallback((value, options) => {
+    // Use server validation if available
+    // if (typeof validate === 'function') {
+    //   return validate(value, {
+    //     ...options, required,
+    //     type: 'text',
+    //     name: ''
+    //   })
+    // }
+
+    // Fallback: Check if we have at least one non-empty string
+
+    if (required) {
+        if (!Array.isArray(value) || value.length === 0 || value.every(s => !s || s.trim() === '')) {
+            return 'At least one answer is required.'
+        }
+    }
+    return true
+  }, [validate, required])
+
+  // 2. The Hook
+  const { value, setValue, showError, errorMessage } = useField<string[]>({ 
+      path, 
+      validate: memoizedValidate 
+  })
+
+  console.log('should show error:', showError, 'message:', errorMessage)
+
+  // 3. Local State Management
   const [rows, setRows] = useState<AnswerRow[]>([])
 
+  // Sync upstream value -> local rows (Initial Load)
   useEffect(() => {
     if (Array.isArray(value) && value.length > 0 && rows.length === 0) {
       setRows(value.map((text) => ({ id: generateId(), text })))
     }
-  }, [value, rows.length])
+  }, [value]) // Deliberately removed rows.length to prevent loops
 
+  // Sync local rows -> upstream value
   const syncToPayload = (currentRows: AnswerRow[]) => {
-    const cleanArray = currentRows.map((r) => r.text).filter((text) => text.trim() !== '')
+    // Only save the text strings to the DB
+    const cleanArray = currentRows.map((r) => r.text)
     setValue(cleanArray)
   }
 
+  // Handlers
   const addAnswer = useCallback(() => {
     const newRows = [...rows, { id: generateId(), text: '' }]
     setRows(newRows)
-    syncToPayload(newRows)
-  }, [rows, setValue])
+    // We don't sync immediately on add to avoid empty string validation errors
+  }, [rows])
 
   const removeAnswer = useCallback((id: string) => {
     const newRows = rows.filter((r) => r.id !== id)
@@ -60,77 +105,83 @@ const AnswersFieldComponent: React.FC<Props> = ({ path, field }) => {
     syncToPayload(rows)
   }
 
+  // 4. Styles & Classes
+  const classes = [
+    'field-type',
+    'answers-field',
+    className,
+    showError && 'error',
+    readOnly && 'read-only',
+  ].filter(Boolean).join(' ')
+
   return (
-    <div style={{ marginBottom: '20px' }}>
-      <label style={{ display: 'block', marginBottom: '10px'}}>
-        Les réponses possibles
-        {/* Only show locale suffix if the field is actually localized in config */}
-        {field.localized && (
-          <span style={{ marginLeft: '5px', fontWeight: 'normal' }}>
-            — {locale.code}
-          </span>
-        )}
-      </label>
+    <div className={classes} style={style}>
+      {/* STANDARD HEADER */}
+      <FieldLabel 
+        label={label} 
+        required={required} 
+        localized={localized} 
+        path={path} 
+      />
 
-      {rows.map((row, index) => (
-        <div
-          key={row.id}
-          style={{ display: 'flex', gap: '10px', marginBottom: '10px', alignItems: 'center' }}
-        >
-          <span
-            style={{
-              fontWeight: 'bold',
-              color: '#666',
-              minWidth: '20px',
-              textAlign: 'right',
-            }}
-          >
-            {index + 1}.
-          </span>
+      <div className="field-type__wrap">
+        {/* STANDARD ERROR */}
+        <FieldError path={path} showError={showError} message={errorMessage} />
 
-          <input
-            type="text"
-            value={row.text}
-            onChange={(e) => updateLocalText(row.id, e.target.value)}
-            onBlur={handleBlur}
-            placeholder={`Réponse ${index + 1}`}
-            style={{ flex: 1, padding: '8px', border: '1px solid #ccc', borderRadius: '4px' }}
-          />
+        {/* ROWS */}
+        <div className="answers-list">
+          {rows.map((row, index) => (
+            <div key={row.id} className="answer-row">
+              {/* Numbering */}
+              <span className="answer-number">
+                {index + 1}.
+              </span>
+
+              {/* NATIVE INPUT WRAPPER */}
+              <div className="input-wrapper">
+                <input
+                  className="input-string" // Inherits global input styles
+                  type="text"
+                  value={row.text}
+                  onChange={(e) => updateLocalText(row.id, e.target.value)}
+                  onBlur={handleBlur}
+                  placeholder={placeholder ? String(placeholder) : `Answer ${index + 1}`}
+                  disabled={readOnly}
+                />
+              </div>
+
+              {/* NATIVE BUTTON STYLE */}
+              <button
+                type="button"
+                onClick={() => removeAnswer(row.id)}
+                className="btn btn--style-secondary btn--icon-style-without-border answer-remove"
+                disabled={readOnly}
+                title="Remove"
+              >
+                ✕
+              </button>
+            </div>
+          ))}
+        </div>
+
+        {/* ADD BUTTON */}
+        <div className="answers-controls">
           <button
             type="button"
-            onClick={() => removeAnswer(row.id)}
-            style={{
-              padding: '8px 12px',
-              background: '#dc3545',
-              color: 'white',
-              border: 'none',
-              borderRadius: '4px',
-              cursor: 'pointer',
-            }}
+            onClick={addAnswer}
+            disabled={readOnly}
+            // Uses Payload's standard "Secondary Button" style
+            className="btn btn--style-secondary btn--size-small"
           >
-            ✕
+            + Add Answer
           </button>
         </div>
-      ))}
 
-      <button
-        type="button"
-        onClick={addAnswer}
-        style={{
-          padding: '8px 16px',
-          background: '#007bff',
-          color: 'white',
-          border: 'none',
-          borderRadius: '4px',
-          cursor: 'pointer',
-          marginTop: '10px',
-          marginLeft: '30px', // Aligned with input (skipping the number width)
-        }}
-      >
-        + Ajouter une réponse
-      </button>
+        {/* STANDARD DESCRIPTION */}
+        <FieldDescription path={path} description={description} />
+      </div>
     </div>
   )
 }
 
-export default AnswersFieldComponent;
+export default AnswersFieldComponent

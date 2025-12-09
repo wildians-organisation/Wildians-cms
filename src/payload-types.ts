@@ -145,21 +145,7 @@ export interface Lessons {
           }
         | {
             title: string;
-            content: {
-              root: {
-                type: string;
-                children: {
-                  type: any;
-                  version: number;
-                  [k: string]: unknown;
-                }[];
-                direction: ('ltr' | 'rtl') | null;
-                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                indent: number;
-                version: number;
-              };
-              [k: string]: unknown;
-            };
+            content: string;
             task: string;
             id?: string | null;
             blockName?: string | null;
@@ -167,21 +153,7 @@ export interface Lessons {
           }
         | {
             title: string;
-            content: {
-              root: {
-                type: string;
-                children: {
-                  type: any;
-                  version: number;
-                  [k: string]: unknown;
-                }[];
-                direction: ('ltr' | 'rtl') | null;
-                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                indent: number;
-                version: number;
-              };
-              [k: string]: unknown;
-            };
+            content: string;
             task: string;
             duration: number;
             eco2Reduced?: number | null;
@@ -205,21 +177,7 @@ export interface Lessons {
                     | boolean
                     | null;
                   correctAnswers: string;
-                  explanation?: {
-                    root: {
-                      type: string;
-                      children: {
-                        type: any;
-                        version: number;
-                        [k: string]: unknown;
-                      }[];
-                      direction: ('ltr' | 'rtl') | null;
-                      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                      indent: number;
-                      version: number;
-                    };
-                    [k: string]: unknown;
-                  } | null;
+                  explanation: string;
                   id?: string | null;
                 }[]
               | null;
@@ -326,21 +284,7 @@ export interface Journey {
                 }
               | {
                   title: string;
-                  content: {
-                    root: {
-                      type: string;
-                      children: {
-                        type: any;
-                        version: number;
-                        [k: string]: unknown;
-                      }[];
-                      direction: ('ltr' | 'rtl') | null;
-                      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                      indent: number;
-                      version: number;
-                    };
-                    [k: string]: unknown;
-                  };
+                  content: string;
                   task: string;
                   id?: string | null;
                   blockName?: string | null;
@@ -348,21 +292,7 @@ export interface Journey {
                 }
               | {
                   title: string;
-                  content: {
-                    root: {
-                      type: string;
-                      children: {
-                        type: any;
-                        version: number;
-                        [k: string]: unknown;
-                      }[];
-                      direction: ('ltr' | 'rtl') | null;
-                      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                      indent: number;
-                      version: number;
-                    };
-                    [k: string]: unknown;
-                  };
+                  content: string;
                   task: string;
                   duration: number;
                   eco2Reduced?: number | null;
@@ -386,21 +316,7 @@ export interface Journey {
                           | boolean
                           | null;
                         correctAnswers: string;
-                        explanation?: {
-                          root: {
-                            type: string;
-                            children: {
-                              type: any;
-                              version: number;
-                              [k: string]: unknown;
-                            }[];
-                            direction: ('ltr' | 'rtl') | null;
-                            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                            indent: number;
-                            version: number;
-                          };
-                          [k: string]: unknown;
-                        } | null;
+                        explanation: string;
                         id?: string | null;
                       }[]
                     | null;

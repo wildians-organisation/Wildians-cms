@@ -1,0 +1,58 @@
+/* We target the official ".error" class on the parent container.
+   When Payload adds this class, we force the MDEditor border to be red.
+*/
+.field-type.error .w-md-editor {
+    border-color: var(--theme-error-500) !important;
+    box-shadow: 0 0 0 1px var(--theme-error-500); /* Optional: Adds the 'glow' effect */
+}
+
+/* Optional: Add spacing to match Payload inputs */
+.markdown-input-container {
+    margin-bottom: 10px;
+}
+
+
+.answers-field .answers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.answers-field .answer-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.answers-field .answer-number {
+  min-width: 24px;
+  text-align: right;
+  font-weight: 600;
+  /* Uses official Payload theme color (works in dark mode) */
+  color: var(--theme-elevation-400); 
+  font-size: 0.9rem;
+}
+
+.answers-field .input-wrapper {
+  flex: 1;
+  /* input-wrapper handles the border, so we don't need extra styles here */
+}
+
+/* Align the "Add" button with the input, skipping the number width */
+.answers-field .answers-controls {
+  padding-left: 36px; /* 24px (number) + 12px (gap) */
+}
+
+.answers-field .answer-remove {
+  padding: 0 10px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--theme-elevation-400);
+}
+
+.answers-field .answer-remove:hover {
+  color: var(--theme-error-500); /* Red on hover */
+}

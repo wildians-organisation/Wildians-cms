@@ -1,3 +1,4 @@
+import markdownField from '@/fields/MarkdownField'
 import type { Block } from 'payload'
 
 export const Chapters: Block = {
@@ -15,17 +16,11 @@ export const Chapters: Block = {
       required: true,
       localized: true,
     },
-    {
+    markdownField({
       name: 'content',
-      type: 'textarea',
       label: 'Contenu en markdown',
       required: true,
       localized: true,
-      admin: {
-        components: {
-          Field: '/components/MarkdownField.tsx', 
-        },
-      },
-    },
+    }),
   ],
 }

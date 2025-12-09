@@ -1,4 +1,5 @@
 import answersField from '@/fields/AnswersField'
+import markdownField from '@/fields/MarkdownField'
 import type { Block, Field } from 'payload'
 
 export const QuestionsField: Field = {
@@ -27,12 +28,12 @@ export const QuestionsField: Field = {
       type: 'text',
       required: true,
     },
-    {
+    markdownField({
       name: 'explanation',
       label: 'Explication',
-      type: 'richText',
+      required: true,
       localized: true,
-    },
+    }),
   ],
 }
 
