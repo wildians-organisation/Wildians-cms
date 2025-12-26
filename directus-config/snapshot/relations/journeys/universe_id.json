@@ -1,0 +1,25 @@
+{
+  "collection": "journeys",
+  "field": "universe_id",
+  "related_collection": "universes",
+  "meta": {
+    "junction_field": null,
+    "many_collection": "journeys",
+    "many_field": "universe_id",
+    "one_allowed_collections": null,
+    "one_collection": "universes",
+    "one_collection_field": null,
+    "one_deselect_action": "nullify",
+    "one_field": "journeys",
+    "sort_field": "sort"
+  },
+  "schema": {
+    "table": "journeys",
+    "column": "universe_id",
+    "foreign_key_table": "universes",
+    "foreign_key_column": "id",
+    "constraint_name": "journeys_universe_id_foreign",
+    "on_update": "NO ACTION",
+    "on_delete": "CASCADE"
+  }
+}

@@ -11,16 +11,16 @@
     "display_template": "{{translations.name}}",
     "group": null,
     "hidden": false,
-    "icon": null,
+    "icon": "explore",
     "item_duplication_fields": null,
     "note": null,
     "preview_url": null,
     "singleton": false,
-    "sort": 1,
-    "sort_field": "sort",
+    "sort": 2,
+    "sort_field": null,
     "translations": null,
     "unarchive_value": "draft",
-    "versioning": true
+    "versioning": false
   },
   "schema": {
     "name": "journeys"

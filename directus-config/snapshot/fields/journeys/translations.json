@@ -5,8 +5,10 @@
   "meta": {
     "collection": "journeys",
     "conditions": null,
-    "display": null,
-    "display_options": null,
+    "display": "related-values",
+    "display_options": {
+      "template": "{{name}}"
+    },
     "field": "translations",
     "group": null,
     "hidden": false,
@@ -17,7 +19,7 @@
       "languageField": "name"
     },
     "readonly": false,
-    "required": false,
+    "required": true,
     "searchable": true,
     "sort": 7,
     "special": [

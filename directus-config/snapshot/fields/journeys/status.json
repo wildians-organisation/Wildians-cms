@@ -4,21 +4,7 @@
   "type": "string",
   "meta": {
     "collection": "journeys",
-    "conditions": [
-      {
-        "hidden": false,
-        "name": "Show on Main",
-        "rule": {
-          "_and": [
-            {
-              "$version": {
-                "_eq": null
-              }
-            }
-          ]
-        }
-      }
-    ],
+    "conditions": null,
     "display": "labels",
     "display_options": {
       "choices": [
@@ -48,7 +34,7 @@
     },
     "field": "status",
     "group": null,
-    "hidden": true,
+    "hidden": false,
     "interface": "select-dropdown",
     "note": null,
     "options": {
@@ -73,7 +59,7 @@
     "readonly": false,
     "required": false,
     "searchable": true,
-    "sort": 6,
+    "sort": 5,
     "special": null,
     "translations": null,
     "validation": null,

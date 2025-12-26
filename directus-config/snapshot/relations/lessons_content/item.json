@@ -8,7 +8,9 @@
     "many_field": "item",
     "one_allowed_collections": [
       "chapters",
-      "quests"
+      "quests",
+      "quizzes",
+      "habits"
     ],
     "one_collection": null,
     "one_collection_field": "collection",

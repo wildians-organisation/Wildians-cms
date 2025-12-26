@@ -10,11 +10,13 @@
     "field": "description",
     "group": null,
     "hidden": false,
-    "interface": "input-rich-text-md",
+    "interface": "input-multiline",
     "note": null,
-    "options": null,
+    "options": {
+      "trim": true
+    },
     "readonly": false,
-    "required": false,
+    "required": true,
     "searchable": true,
     "sort": 5,
     "special": null,

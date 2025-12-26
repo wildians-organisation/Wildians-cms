@@ -8,19 +8,19 @@
     "collapse": "open",
     "collection": "lessons",
     "color": null,
-    "display_template": "{{name}}",
+    "display_template": "{{translations.name}}",
     "group": null,
     "hidden": false,
-    "icon": null,
+    "icon": "history_edu",
     "item_duplication_fields": null,
     "note": null,
     "preview_url": null,
     "singleton": false,
-    "sort": 2,
+    "sort": 3,
     "sort_field": null,
     "translations": null,
     "unarchive_value": "draft",
-    "versioning": true
+    "versioning": false
   },
   "schema": {
     "name": "lessons"

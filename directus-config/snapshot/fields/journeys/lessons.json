@@ -5,8 +5,10 @@
   "meta": {
     "collection": "journeys",
     "conditions": null,
-    "display": null,
-    "display_options": null,
+    "display": "related-values",
+    "display_options": {
+      "template": "{{translations.name}}"
+    },
     "field": "lessons",
     "group": null,
     "hidden": false,
@@ -15,7 +17,7 @@
     "options": {
       "enableLink": true,
       "sort": "sort",
-      "template": "{{name}}"
+      "template": "{{translations.name}}"
     },
     "readonly": false,
     "required": false,
