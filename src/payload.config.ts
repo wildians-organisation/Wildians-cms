@@ -1,5 +1,5 @@
 import { s3Storage } from '@payloadcms/storage-s3'
-import { postgresAdapter } from '@payloadcms/db-postgres'
+import { mongooseAdapter } from '@payloadcms/db-mongodb'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import path from 'path'
 import { buildConfig } from 'payload'
@@ -83,13 +83,17 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
-  db: postgresAdapter({
-    schemaName: 'content',
-    idType: 'uuid',
-    pool: {
-      connectionString: process.env.DATABASE_URI || '',
-    },
+  db: mongooseAdapter({
+    url: 'mongodb://root:example@localhost:27017/wildians?authSource=admin'
+    // ...compatibilityOptions.firestore,
   }),
+  // db: postgresAdapter({
+  //   schemaName: 'content',
+  //   idType: 'uuid',
+  //   pool: {
+  //     connectionString: process.env.DATABASE_URI || '',
+  //   },
+  // }),
   sharp,
   plugins: [
     // S3 storage - only enabled when S3_BUCKET is configured
