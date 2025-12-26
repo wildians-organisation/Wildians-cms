@@ -1,0 +1,32 @@
+{
+  "collection": "journeys",
+  "field": "lessons",
+  "type": "alias",
+  "meta": {
+    "collection": "journeys",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "lessons",
+    "group": null,
+    "hidden": false,
+    "interface": "list-o2m",
+    "note": null,
+    "options": {
+      "enableLink": true,
+      "sort": "sort",
+      "template": "{{name}}"
+    },
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 8,
+    "special": [
+      "o2m"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

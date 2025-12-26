@@ -1,0 +1,42 @@
+{
+  "collection": "journeys",
+  "field": "header-prjaty",
+  "type": "alias",
+  "meta": {
+    "collection": "journeys",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "header-prjaty",
+    "group": null,
+    "hidden": false,
+    "interface": "header",
+    "note": null,
+    "options": {
+      "color": "#FFFBE0",
+      "help": null,
+      "links": [
+        {
+          "actionType": "url",
+          "icon": "anchor",
+          "label": "Test",
+          "type": "normal",
+          "url": "https://google.com\n"
+        }
+      ],
+      "title": "header"
+    },
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 1,
+    "special": [
+      "alias",
+      "no-data"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}
