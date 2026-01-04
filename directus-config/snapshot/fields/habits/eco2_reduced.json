@@ -1,13 +1,13 @@
 {
   "collection": "habits",
-  "field": "eco2Reduced",
+  "field": "eco2_reduced",
   "type": "float",
   "meta": {
     "collection": "habits",
     "conditions": null,
     "display": null,
     "display_options": null,
-    "field": "eco2Reduced",
+    "field": "eco2_reduced",
     "group": null,
     "hidden": false,
     "interface": "input",
@@ -21,7 +21,7 @@
     "readonly": false,
     "required": true,
     "searchable": true,
-    "sort": 8,
+    "sort": 10,
     "special": null,
     "translations": null,
     "validation": null,
@@ -29,7 +29,7 @@
     "width": "half"
   },
   "schema": {
-    "name": "eco2Reduced",
+    "name": "eco2_reduced",
     "table": "habits",
     "data_type": "real",
     "default_value": 0,

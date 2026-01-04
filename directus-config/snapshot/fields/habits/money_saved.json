@@ -1,13 +1,13 @@
 {
   "collection": "habits",
-  "field": "moneySaved",
+  "field": "money_saved",
   "type": "float",
   "meta": {
     "collection": "habits",
     "conditions": null,
     "display": null,
     "display_options": null,
-    "field": "moneySaved",
+    "field": "money_saved",
     "group": null,
     "hidden": false,
     "interface": "input",
@@ -22,7 +22,7 @@
     "readonly": false,
     "required": true,
     "searchable": true,
-    "sort": 7,
+    "sort": 9,
     "special": null,
     "translations": null,
     "validation": null,
@@ -30,7 +30,7 @@
     "width": "half"
   },
   "schema": {
-    "name": "moneySaved",
+    "name": "money_saved",
     "table": "habits",
     "data_type": "real",
     "default_value": 0,

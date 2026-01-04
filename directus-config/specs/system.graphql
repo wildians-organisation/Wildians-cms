@@ -244,9 +244,9 @@ type Mutation {
 type Subscription {
   chapters_mutated(event: EventEnum): chapters_mutated
   quests_mutated(event: EventEnum): quests_mutated
+  lessons_content_mutated(event: EventEnum): lessons_content_mutated
   lessons_mutated(event: EventEnum): lessons_mutated
   languages_mutated(event: EventEnum): languages_mutated
-  lessons_content_mutated(event: EventEnum): lessons_content_mutated
   journeys_translations_mutated(event: EventEnum): journeys_translations_mutated
   universes_translations_mutated(event: EventEnum): universes_translations_mutated
   lessons_translations_mutated(event: EventEnum): lessons_translations_mutated
@@ -1683,11 +1683,11 @@ type habits {
   """Le nombre de jours pendant lesquels pratiquer cette habitude"""
   duration: Int
 
-  """Le eqCo2 réduit par jour grâce à cette habitude (en grammes)"""
-  eco2Reduced: Float!
-
   """Le montant économisé par jour grâce à cette habitude (en euros)"""
-  moneySaved: Float!
+  money_saved: Float!
+
+  """Le eqCo2 réduit par jour grâce à cette habitude (en grammes)"""
+  eco2_reduced: Float!
   translations(filter: habits_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [habits_translations]
   translations_func: count_functions
 }
@@ -2950,8 +2950,8 @@ input habits_filter {
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
   duration: number_filter_operators
-  eco2Reduced: number_filter_operators
-  moneySaved: number_filter_operators
+  money_saved: number_filter_operators
+  eco2_reduced: number_filter_operators
   translations: habits_translations_quantifier_filter
   translations_func: count_function_filter_operators
   _and: [habits_filter]

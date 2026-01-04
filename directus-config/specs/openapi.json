@@ -3,7 +3,7 @@
   "info": {
     "title": "Dynamic API Specification",
     "description": "This is a dynamically generated API specification for all endpoints existing on the current project.",
-    "version": "2100ca75c8ed742de656e561739fa8c73af35a96"
+    "version": "55f93685c3de169af2a5555720dd4e108ed7386c"
   },
   "servers": [
     {
@@ -1729,6 +1729,395 @@
         ]
       }
     },
+    "/items/lessons_content": {
+      "post": {
+        "summary": "Create an Item",
+        "description": "Create a new lessons_content item.",
+        "tags": [
+          "Items",
+          "ItemsLessonsContent"
+        ],
+        "operationId": "createItemsLessonsContent",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Meta"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ItemsLessonsContent"
+                    }
+                  },
+                  {
+                    "$ref": "#/components/schemas/ItemsLessonsContent"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ItemsLessonsContent"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      },
+      "get": {
+        "summary": "List Items",
+        "description": "List the lessons_content items.",
+        "tags": [
+          "Items",
+          "ItemsLessonsContent"
+        ],
+        "operationId": "readItemsLessonsContent",
+        "security": [
+          {
+            "Auth": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Fields"
+          },
+          {
+            "$ref": "#/components/parameters/Limit"
+          },
+          {
+            "$ref": "#/components/parameters/Meta"
+          },
+          {
+            "$ref": "#/components/parameters/Offset"
+          },
+          {
+            "$ref": "#/components/parameters/Sort"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/Search"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/ItemsLessonsContent"
+                      }
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/x-metadata"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update Multiple Items",
+        "description": "Update multiple lessons_content items at the same time.",
+        "tags": [
+          "Items",
+          "ItemsLessonsContent"
+        ],
+        "operationId": "updateItemsLessonsContent",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Fields"
+          },
+          {
+            "$ref": "#/components/parameters/Limit"
+          },
+          {
+            "$ref": "#/components/parameters/Meta"
+          },
+          {
+            "$ref": "#/components/parameters/Offset"
+          },
+          {
+            "$ref": "#/components/parameters/Sort"
+          },
+          {
+            "$ref": "#/components/parameters/Filter"
+          },
+          {
+            "$ref": "#/components/parameters/Search"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ItemsLessonsContent"
+                    }
+                  },
+                  {
+                    "$ref": "#/components/schemas/ItemsLessonsContent"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ItemsLessonsContent"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete Multiple Items",
+        "description": "Delete multiple existing lessons_content items.",
+        "tags": [
+          "Items",
+          "ItemsLessonsContent"
+        ],
+        "operationId": "deleteItemsLessonsContent",
+        "responses": {
+          "200": {
+            "description": "Successful request"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/items/lessons_content/{id}": {
+      "get": {
+        "summary": "Retrieve an Item",
+        "description": "Retrieve a single lessons_content item by unique identifier.",
+        "tags": [
+          "Items",
+          "ItemsLessonsContent"
+        ],
+        "operationId": "readSingleItemsLessonsContent",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Fields"
+          },
+          {
+            "$ref": "#/components/parameters/Meta"
+          },
+          {
+            "$ref": "#/components/parameters/Version"
+          },
+          {
+            "name": "id",
+            "description": "Index of the item.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "integer",
+                  "description": "Incremental index of the item.",
+                  "example": 1
+                },
+                {
+                  "type": "string",
+                  "description": "Unique identifier of the item.",
+                  "example": "8cbb43fe-4cdf-4991-8352-c461779cec02"
+                }
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "$ref": "#/components/schemas/ItemsLessonsContent"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update an Item",
+        "description": "Update an existing lessons_content item.",
+        "tags": [
+          "Items",
+          "ItemsLessonsContent"
+        ],
+        "operationId": "updateSingleItemsLessonsContent",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Fields"
+          },
+          {
+            "$ref": "#/components/parameters/Meta"
+          },
+          {
+            "name": "id",
+            "description": "Index of the item.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "integer",
+                  "description": "Incremental index of the item.",
+                  "example": 1
+                },
+                {
+                  "type": "string",
+                  "description": "Unique identifier of the item.",
+                  "example": "8cbb43fe-4cdf-4991-8352-c461779cec02"
+                }
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/ItemsLessonsContent"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "$ref": "#/components/schemas/ItemsLessonsContent"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete an Item",
+        "description": "Delete an existing lessons_content item.",
+        "tags": [
+          "Items",
+          "ItemsLessonsContent"
+        ],
+        "operationId": "deleteSingleItemsLessonsContent",
+        "responses": {
+          "200": {
+            "description": "Successful request"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Index of the item.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "integer",
+                  "description": "Incremental index of the item.",
+                  "example": 1
+                },
+                {
+                  "type": "string",
+                  "description": "Unique identifier of the item.",
+                  "example": "8cbb43fe-4cdf-4991-8352-c461779cec02"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
     "/items/lessons": {
       "post": {
         "summary": "Create an Item",
@@ -2472,395 +2861,6 @@
           "ItemsLanguages"
         ],
         "operationId": "deleteSingleItemsLanguages",
-        "responses": {
-          "200": {
-            "description": "Successful request"
-          },
-          "401": {
-            "$ref": "#/components/responses/UnauthorizedError"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFoundError"
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "description": "Index of the item.",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "oneOf": [
-                {
-                  "type": "integer",
-                  "description": "Incremental index of the item.",
-                  "example": 1
-                },
-                {
-                  "type": "string",
-                  "description": "Unique identifier of the item.",
-                  "example": "8cbb43fe-4cdf-4991-8352-c461779cec02"
-                }
-              ]
-            }
-          }
-        ]
-      }
-    },
-    "/items/lessons_content": {
-      "post": {
-        "summary": "Create an Item",
-        "description": "Create a new lessons_content item.",
-        "tags": [
-          "Items",
-          "ItemsLessonsContent"
-        ],
-        "operationId": "createItemsLessonsContent",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/Meta"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "oneOf": [
-                  {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/ItemsLessonsContent"
-                    }
-                  },
-                  {
-                    "$ref": "#/components/schemas/ItemsLessonsContent"
-                  }
-                ]
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/ItemsLessonsContent"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/UnauthorizedError"
-          }
-        }
-      },
-      "get": {
-        "summary": "List Items",
-        "description": "List the lessons_content items.",
-        "tags": [
-          "Items",
-          "ItemsLessonsContent"
-        ],
-        "operationId": "readItemsLessonsContent",
-        "security": [
-          {
-            "Auth": []
-          }
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/Fields"
-          },
-          {
-            "$ref": "#/components/parameters/Limit"
-          },
-          {
-            "$ref": "#/components/parameters/Meta"
-          },
-          {
-            "$ref": "#/components/parameters/Offset"
-          },
-          {
-            "$ref": "#/components/parameters/Sort"
-          },
-          {
-            "$ref": "#/components/parameters/Filter"
-          },
-          {
-            "$ref": "#/components/parameters/Search"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "$ref": "#/components/schemas/ItemsLessonsContent"
-                      }
-                    },
-                    "meta": {
-                      "$ref": "#/components/schemas/x-metadata"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/UnauthorizedError"
-          }
-        }
-      },
-      "patch": {
-        "summary": "Update Multiple Items",
-        "description": "Update multiple lessons_content items at the same time.",
-        "tags": [
-          "Items",
-          "ItemsLessonsContent"
-        ],
-        "operationId": "updateItemsLessonsContent",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/Fields"
-          },
-          {
-            "$ref": "#/components/parameters/Limit"
-          },
-          {
-            "$ref": "#/components/parameters/Meta"
-          },
-          {
-            "$ref": "#/components/parameters/Offset"
-          },
-          {
-            "$ref": "#/components/parameters/Sort"
-          },
-          {
-            "$ref": "#/components/parameters/Filter"
-          },
-          {
-            "$ref": "#/components/parameters/Search"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "oneOf": [
-                  {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/ItemsLessonsContent"
-                    }
-                  },
-                  {
-                    "$ref": "#/components/schemas/ItemsLessonsContent"
-                  }
-                ]
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/ItemsLessonsContent"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "summary": "Delete Multiple Items",
-        "description": "Delete multiple existing lessons_content items.",
-        "tags": [
-          "Items",
-          "ItemsLessonsContent"
-        ],
-        "operationId": "deleteItemsLessonsContent",
-        "responses": {
-          "200": {
-            "description": "Successful request"
-          },
-          "401": {
-            "$ref": "#/components/responses/UnauthorizedError"
-          }
-        },
-        "parameters": []
-      }
-    },
-    "/items/lessons_content/{id}": {
-      "get": {
-        "summary": "Retrieve an Item",
-        "description": "Retrieve a single lessons_content item by unique identifier.",
-        "tags": [
-          "Items",
-          "ItemsLessonsContent"
-        ],
-        "operationId": "readSingleItemsLessonsContent",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/Fields"
-          },
-          {
-            "$ref": "#/components/parameters/Meta"
-          },
-          {
-            "$ref": "#/components/parameters/Version"
-          },
-          {
-            "name": "id",
-            "description": "Index of the item.",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "oneOf": [
-                {
-                  "type": "integer",
-                  "description": "Incremental index of the item.",
-                  "example": 1
-                },
-                {
-                  "type": "string",
-                  "description": "Unique identifier of the item.",
-                  "example": "8cbb43fe-4cdf-4991-8352-c461779cec02"
-                }
-              ]
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "type": "object",
-                      "$ref": "#/components/schemas/ItemsLessonsContent"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/UnauthorizedError"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFoundError"
-          }
-        }
-      },
-      "patch": {
-        "summary": "Update an Item",
-        "description": "Update an existing lessons_content item.",
-        "tags": [
-          "Items",
-          "ItemsLessonsContent"
-        ],
-        "operationId": "updateSingleItemsLessonsContent",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/Fields"
-          },
-          {
-            "$ref": "#/components/parameters/Meta"
-          },
-          {
-            "name": "id",
-            "description": "Index of the item.",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "oneOf": [
-                {
-                  "type": "integer",
-                  "description": "Incremental index of the item.",
-                  "example": 1
-                },
-                {
-                  "type": "string",
-                  "description": "Unique identifier of the item.",
-                  "example": "8cbb43fe-4cdf-4991-8352-c461779cec02"
-                }
-              ]
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "$ref": "#/components/schemas/ItemsLessonsContent"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "type": "object",
-                      "$ref": "#/components/schemas/ItemsLessonsContent"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/UnauthorizedError"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFoundError"
-          }
-        }
-      },
-      "delete": {
-        "summary": "Delete an Item",
-        "description": "Delete an existing lessons_content item.",
-        "tags": [
-          "Items",
-          "ItemsLessonsContent"
-        ],
-        "operationId": "deleteSingleItemsLessonsContent",
         "responses": {
           "200": {
             "description": "Successful request"
@@ -14169,16 +14169,16 @@
       "x-collection": "quests"
     },
     {
+      "name": "ItemsLessonsContent",
+      "x-collection": "lessons_content"
+    },
+    {
       "name": "ItemsLessons",
       "x-collection": "lessons"
     },
     {
       "name": "ItemsLanguages",
       "x-collection": "languages"
-    },
-    {
-      "name": "ItemsLessonsContent",
-      "x-collection": "lessons_content"
     },
     {
       "name": "ItemsJourneysTranslations",
@@ -14933,12 +14933,12 @@
         "type": "object",
         "properties": {
           "date_created": {
-            "nullable": true,
+            "nullable": false,
             "type": "string",
             "format": "timestamp"
           },
           "date_updated": {
-            "nullable": true,
+            "nullable": false,
             "type": "string",
             "format": "timestamp"
           },
@@ -14964,6 +14964,8 @@
         },
         "x-collection": "chapters",
         "required": [
+          "date_created",
+          "date_updated",
           "id"
         ]
       },
@@ -14971,12 +14973,12 @@
         "type": "object",
         "properties": {
           "date_created": {
-            "nullable": true,
+            "nullable": false,
             "type": "string",
             "format": "timestamp"
           },
           "date_updated": {
-            "nullable": true,
+            "nullable": false,
             "type": "string",
             "format": "timestamp"
           },
@@ -15002,19 +15004,74 @@
         },
         "x-collection": "quests",
         "required": [
+          "date_created",
+          "date_updated",
           "id"
         ]
+      },
+      "ItemsLessonsContent": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "nullable": true,
+            "type": "string"
+          },
+          "id": {
+            "nullable": false,
+            "type": "integer"
+          },
+          "item": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "$ref": "#/components/schemas/ItemsChapters"
+                },
+                {
+                  "$ref": "#/components/schemas/ItemsQuests"
+                },
+                {
+                  "$ref": "#/components/schemas/ItemsQuizzes"
+                },
+                {
+                  "$ref": "#/components/schemas/ItemsHabits"
+                }
+              ]
+            }
+          },
+          "lessons_id": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "$ref": "#/components/schemas/ItemsLessons"
+              }
+            ]
+          },
+          "sort": {
+            "nullable": true,
+            "type": "integer"
+          }
+        },
+        "x-collection": "lessons_content"
       },
       "ItemsLessons": {
         "type": "object",
         "properties": {
           "date_created": {
-            "nullable": true,
+            "nullable": false,
             "type": "string",
             "format": "timestamp"
           },
           "date_updated": {
-            "nullable": true,
+            "nullable": false,
             "type": "string",
             "format": "timestamp"
           },
@@ -15074,6 +15131,8 @@
         },
         "x-collection": "lessons",
         "required": [
+          "date_created",
+          "date_updated",
           "id"
         ]
       },
@@ -15097,59 +15156,6 @@
         "required": [
           "code"
         ]
-      },
-      "ItemsLessonsContent": {
-        "type": "object",
-        "properties": {
-          "collection": {
-            "nullable": true,
-            "type": "string"
-          },
-          "id": {
-            "nullable": false,
-            "type": "integer"
-          },
-          "item": {
-            "nullable": true,
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/components/schemas/ItemsChapters"
-                },
-                {
-                  "$ref": "#/components/schemas/ItemsQuests"
-                },
-                {
-                  "$ref": "#/components/schemas/ItemsQuizzes"
-                },
-                {
-                  "$ref": "#/components/schemas/ItemsHabits"
-                }
-              ]
-            }
-          },
-          "lessons_id": {
-            "nullable": true,
-            "oneOf": [
-              {
-                "type": "string",
-                "format": "uuid"
-              },
-              {
-                "$ref": "#/components/schemas/ItemsLessons"
-              }
-            ]
-          },
-          "sort": {
-            "nullable": true,
-            "type": "integer"
-          }
-        },
-        "x-collection": "lessons_content"
       },
       "ItemsJourneysTranslations": {
         "type": "object",
@@ -15324,12 +15330,12 @@
             "format": "uuid"
           },
           "date_created": {
-            "nullable": true,
+            "nullable": false,
             "type": "string",
             "format": "timestamp"
           },
           "date_updated": {
-            "nullable": true,
+            "nullable": false,
             "type": "string",
             "format": "timestamp"
           },
@@ -15350,7 +15356,9 @@
         },
         "x-collection": "quizzes",
         "required": [
-          "id"
+          "id",
+          "date_created",
+          "date_updated"
         ]
       },
       "ItemsQuizzesTranslations": {
@@ -15402,12 +15410,12 @@
             "format": "uuid"
           },
           "date_created": {
-            "nullable": true,
+            "nullable": false,
             "type": "string",
             "format": "timestamp"
           },
           "date_updated": {
-            "nullable": true,
+            "nullable": false,
             "type": "string",
             "format": "timestamp"
           },
@@ -15416,15 +15424,15 @@
             "description": "Le nombre de jours pendant lesquels pratiquer cette habitude",
             "type": "integer"
           },
-          "eco2Reduced": {
+          "money_saved": {
             "nullable": false,
-            "description": "Le eqCo2 réduit par jour grâce à cette habitude (en grammes)",
+            "description": "Le montant économisé par jour grâce à cette habitude (en euros)",
             "type": "number",
             "format": "float"
           },
-          "moneySaved": {
+          "eco2_reduced": {
             "nullable": false,
-            "description": "Le montant économisé par jour grâce à cette habitude (en euros)",
+            "description": "Le eqCo2 réduit par jour grâce à cette habitude (en grammes)",
             "type": "number",
             "format": "float"
           },
@@ -15445,7 +15453,9 @@
         },
         "x-collection": "habits",
         "required": [
-          "id"
+          "id",
+          "date_created",
+          "date_updated"
         ]
       },
       "ItemsHabitsTranslations": {
@@ -15542,12 +15552,12 @@
         "type": "object",
         "properties": {
           "date_created": {
-            "nullable": true,
+            "nullable": false,
             "type": "string",
             "format": "timestamp"
           },
           "date_updated": {
-            "nullable": true,
+            "nullable": false,
             "type": "string",
             "format": "timestamp"
           },
@@ -15608,6 +15618,8 @@
         },
         "x-collection": "journeys",
         "required": [
+          "date_created",
+          "date_updated",
           "id"
         ]
       },
@@ -15628,12 +15640,12 @@
             "type": "integer"
           },
           "date_created": {
-            "nullable": true,
+            "nullable": false,
             "type": "string",
             "format": "timestamp"
           },
           "date_updated": {
-            "nullable": true,
+            "nullable": false,
             "type": "string",
             "format": "timestamp"
           },
@@ -15669,7 +15681,9 @@
         },
         "x-collection": "universes",
         "required": [
-          "id"
+          "id",
+          "date_created",
+          "date_updated"
         ]
       },
       "Relations": {

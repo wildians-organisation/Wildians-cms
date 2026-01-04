@@ -7,6 +7,10 @@ type Query {
   quests_by_id(id: ID!, version: String): quests
   quests_aggregated(groupBy: [String], filter: quests_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [quests_aggregated!]!
   quests_by_version(version: String!, id: ID!): version_quests
+  lessons_content(filter: lessons_content_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [lessons_content!]!
+  lessons_content_by_id(id: ID!, version: String): lessons_content
+  lessons_content_aggregated(groupBy: [String], filter: lessons_content_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [lessons_content_aggregated!]!
+  lessons_content_by_version(version: String!, id: ID!): version_lessons_content
   lessons(filter: lessons_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [lessons!]!
   lessons_by_id(id: ID!, version: String): lessons
   lessons_aggregated(groupBy: [String], filter: lessons_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [lessons_aggregated!]!
@@ -15,10 +19,6 @@ type Query {
   languages_by_id(id: ID!, version: String): languages
   languages_aggregated(groupBy: [String], filter: languages_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [languages_aggregated!]!
   languages_by_version(version: String!, id: ID!): version_languages
-  lessons_content(filter: lessons_content_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [lessons_content!]!
-  lessons_content_by_id(id: ID!, version: String): lessons_content
-  lessons_content_aggregated(groupBy: [String], filter: lessons_content_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [lessons_content_aggregated!]!
-  lessons_content_by_version(version: String!, id: ID!): version_lessons_content
   journeys_translations(filter: journeys_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [journeys_translations!]!
   journeys_translations_by_id(id: ID!, version: String): journeys_translations
   journeys_translations_aggregated(groupBy: [String], filter: journeys_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [journeys_translations_aggregated!]!
@@ -74,12 +74,12 @@ type Mutation {
   create_chapters_item(data: create_chapters_input!): chapters
   create_quests_items(filter: quests_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_quests_input!]): [quests!]!
   create_quests_item(data: create_quests_input!): quests
+  create_lessons_content_items(filter: lessons_content_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_lessons_content_input!]): [lessons_content!]!
+  create_lessons_content_item(data: create_lessons_content_input!): lessons_content
   create_lessons_items(filter: lessons_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_lessons_input!]): [lessons!]!
   create_lessons_item(data: create_lessons_input!): lessons
   create_languages_items(filter: languages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_languages_input!]): [languages!]!
   create_languages_item(data: create_languages_input!): languages
-  create_lessons_content_items(filter: lessons_content_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_lessons_content_input!]): [lessons_content!]!
-  create_lessons_content_item(data: create_lessons_content_input!): lessons_content
   create_journeys_translations_items(filter: journeys_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_journeys_translations_input!]): [journeys_translations!]!
   create_journeys_translations_item(data: create_journeys_translations_input!): journeys_translations
   create_universes_translations_items(filter: universes_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_universes_translations_input!]): [universes_translations!]!
@@ -110,15 +110,15 @@ type Mutation {
   update_quests_items(filter: quests_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_quests_input!): [quests!]!
   update_quests_batch(filter: quests_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_quests_input!]): [quests!]!
   update_quests_item(id: ID!, data: update_quests_input!): quests
+  update_lessons_content_items(filter: lessons_content_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_lessons_content_input!): [lessons_content!]!
+  update_lessons_content_batch(filter: lessons_content_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_lessons_content_input!]): [lessons_content!]!
+  update_lessons_content_item(id: ID!, data: update_lessons_content_input!): lessons_content
   update_lessons_items(filter: lessons_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_lessons_input!): [lessons!]!
   update_lessons_batch(filter: lessons_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_lessons_input!]): [lessons!]!
   update_lessons_item(id: ID!, data: update_lessons_input!): lessons
   update_languages_items(filter: languages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_languages_input!): [languages!]!
   update_languages_batch(filter: languages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_languages_input!]): [languages!]!
   update_languages_item(id: ID!, data: update_languages_input!): languages
-  update_lessons_content_items(filter: lessons_content_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_lessons_content_input!): [lessons_content!]!
-  update_lessons_content_batch(filter: lessons_content_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_lessons_content_input!]): [lessons_content!]!
-  update_lessons_content_item(id: ID!, data: update_lessons_content_input!): lessons_content
   update_journeys_translations_items(filter: journeys_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_journeys_translations_input!): [journeys_translations!]!
   update_journeys_translations_batch(filter: journeys_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_journeys_translations_input!]): [journeys_translations!]!
   update_journeys_translations_item(id: ID!, data: update_journeys_translations_input!): journeys_translations
@@ -159,12 +159,12 @@ type Mutation {
   delete_chapters_item(id: ID!): delete_one
   delete_quests_items(ids: [ID]!): delete_many
   delete_quests_item(id: ID!): delete_one
+  delete_lessons_content_items(ids: [ID]!): delete_many
+  delete_lessons_content_item(id: ID!): delete_one
   delete_lessons_items(ids: [ID]!): delete_many
   delete_lessons_item(id: ID!): delete_one
   delete_languages_items(ids: [ID]!): delete_many
   delete_languages_item(id: ID!): delete_one
-  delete_lessons_content_items(ids: [ID]!): delete_many
-  delete_lessons_content_item(id: ID!): delete_one
   delete_journeys_translations_items(ids: [ID]!): delete_many
   delete_journeys_translations_item(id: ID!): delete_one
   delete_universes_translations_items(ids: [ID]!): delete_many
@@ -194,9 +194,9 @@ type Mutation {
 type Subscription {
   chapters_mutated(event: EventEnum): chapters_mutated
   quests_mutated(event: EventEnum): quests_mutated
+  lessons_content_mutated(event: EventEnum): lessons_content_mutated
   lessons_mutated(event: EventEnum): lessons_mutated
   languages_mutated(event: EventEnum): languages_mutated
-  lessons_content_mutated(event: EventEnum): lessons_content_mutated
   journeys_translations_mutated(event: EventEnum): journeys_translations_mutated
   universes_translations_mutated(event: EventEnum): universes_translations_mutated
   lessons_translations_mutated(event: EventEnum): lessons_translations_mutated
@@ -967,11 +967,11 @@ type habits {
   """Le nombre de jours pendant lesquels pratiquer cette habitude"""
   duration: Int
 
-  """Le eqCo2 réduit par jour grâce à cette habitude (en grammes)"""
-  eco2Reduced: Float!
-
   """Le montant économisé par jour grâce à cette habitude (en euros)"""
-  moneySaved: Float!
+  money_saved: Float!
+
+  """Le eqCo2 réduit par jour grâce à cette habitude (en grammes)"""
+  eco2_reduced: Float!
   translations(filter: habits_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [habits_translations]
   translations_func: count_functions
 }
@@ -997,11 +997,11 @@ type habits_aggregated_count {
   """Le nombre de jours pendant lesquels pratiquer cette habitude"""
   duration: Int
 
-  """Le eqCo2 réduit par jour grâce à cette habitude (en grammes)"""
-  eco2Reduced: Int
-
   """Le montant économisé par jour grâce à cette habitude (en euros)"""
-  moneySaved: Int
+  money_saved: Int
+
+  """Le eqCo2 réduit par jour grâce à cette habitude (en grammes)"""
+  eco2_reduced: Int
   translations: Int
 }
 
@@ -1009,11 +1009,11 @@ type habits_aggregated_fields {
   """Le nombre de jours pendant lesquels pratiquer cette habitude"""
   duration: Float
 
-  """Le eqCo2 réduit par jour grâce à cette habitude (en grammes)"""
-  eco2Reduced: Float
-
   """Le montant économisé par jour grâce à cette habitude (en euros)"""
-  moneySaved: Float
+  money_saved: Float
+
+  """Le eqCo2 réduit par jour grâce à cette habitude (en grammes)"""
+  eco2_reduced: Float
 }
 
 type habits_mutated {
@@ -1566,11 +1566,11 @@ type version_habits {
   """Le nombre de jours pendant lesquels pratiquer cette habitude"""
   duration: Int
 
-  """Le eqCo2 réduit par jour grâce à cette habitude (en grammes)"""
-  eco2Reduced: Float
-
   """Le montant économisé par jour grâce à cette habitude (en euros)"""
-  moneySaved: Float
+  money_saved: Float
+
+  """Le eqCo2 réduit par jour grâce à cette habitude (en grammes)"""
+  eco2_reduced: Float
   translations: JSON
 }
 
@@ -1789,11 +1789,11 @@ input create_habits_input {
   """Le nombre de jours pendant lesquels pratiquer cette habitude"""
   duration: Int
 
-  """Le eqCo2 réduit par jour grâce à cette habitude (en grammes)"""
-  eco2Reduced: Float!
-
   """Le montant économisé par jour grâce à cette habitude (en euros)"""
-  moneySaved: Float!
+  money_saved: Float!
+
+  """Le eqCo2 réduit par jour grâce à cette habitude (en grammes)"""
+  eco2_reduced: Float!
   translations: [create_habits_translations_input]
 }
 
@@ -2382,8 +2382,8 @@ input habits_filter {
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
   duration: number_filter_operators
-  eco2Reduced: number_filter_operators
-  moneySaved: number_filter_operators
+  money_saved: number_filter_operators
+  eco2_reduced: number_filter_operators
   translations: habits_translations_quantifier_filter
   translations_func: count_function_filter_operators
   _and: [habits_filter]
@@ -2782,11 +2782,11 @@ input update_habits_input {
   """Le nombre de jours pendant lesquels pratiquer cette habitude"""
   duration: Int
 
-  """Le eqCo2 réduit par jour grâce à cette habitude (en grammes)"""
-  eco2Reduced: Float
-
   """Le montant économisé par jour grâce à cette habitude (en euros)"""
-  moneySaved: Float
+  money_saved: Float
+
+  """Le eqCo2 réduit par jour grâce à cette habitude (en grammes)"""
+  eco2_reduced: Float
   translations: [update_habits_translations_input]
 }
 
