@@ -1,0 +1,33 @@
+{
+  "collection": "journeys",
+  "field": "translations",
+  "type": "alias",
+  "meta": {
+    "collection": "journeys",
+    "conditions": null,
+    "display": "related-values",
+    "display_options": {
+      "template": "{{name}}"
+    },
+    "field": "translations",
+    "group": null,
+    "hidden": false,
+    "interface": "translations",
+    "note": null,
+    "options": {
+      "defaultLanguage": "fr-FR",
+      "languageField": "name"
+    },
+    "readonly": false,
+    "required": true,
+    "searchable": true,
+    "sort": 8,
+    "special": [
+      "translations"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

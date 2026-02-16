@@ -1,0 +1,118 @@
+{
+  "collection": "quizzes_translations",
+  "field": "questions",
+  "type": "json",
+  "meta": {
+    "collection": "quizzes_translations",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "questions",
+    "group": null,
+    "hidden": false,
+    "interface": "list",
+    "note": null,
+    "options": {
+      "fields": [
+        {
+          "field": "question",
+          "meta": {
+            "field": "question",
+            "interface": "input",
+            "options": {
+              "trim": true
+            },
+            "required": true,
+            "type": "string"
+          },
+          "name": "question",
+          "type": "string"
+        },
+        {
+          "field": "answers",
+          "meta": {
+            "field": "answers",
+            "interface": "list",
+            "options": {
+              "fields": [
+                {
+                  "field": "answer",
+                  "meta": {
+                    "field": "answer",
+                    "interface": "input-multiline",
+                    "required": true,
+                    "type": "text"
+                  },
+                  "name": "answer",
+                  "type": "text"
+                },
+                {
+                  "field": "isCorrect",
+                  "meta": {
+                    "field": "isCorrect",
+                    "interface": "boolean",
+                    "options": {
+                      "label": "Is correct"
+                    },
+                    "required": true,
+                    "type": "boolean"
+                  },
+                  "name": "isCorrect",
+                  "type": "boolean"
+                }
+              ],
+              "template": "{{ isCorrect }} {{ answer }}"
+            },
+            "required": true,
+            "type": "json"
+          },
+          "name": "answers",
+          "type": "json"
+        },
+        {
+          "field": "explanation",
+          "meta": {
+            "field": "explanation",
+            "interface": "input-rich-text-md",
+            "options": {
+              "folder": "397d8ec8-8ce8-4f9b-bdb5-cdd181e1c208"
+            },
+            "type": "text"
+          },
+          "name": "explanation",
+          "type": "text"
+        }
+      ],
+      "template": "{{ question }}"
+    },
+    "readonly": false,
+    "required": true,
+    "searchable": true,
+    "sort": 5,
+    "special": [
+      "cast-json"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  },
+  "schema": {
+    "name": "questions",
+    "table": "quizzes_translations",
+    "data_type": "json",
+    "default_value": [],
+    "max_length": null,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": false,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": null,
+    "foreign_key_column": null
+  }
+}

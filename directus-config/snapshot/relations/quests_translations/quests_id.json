@@ -1,0 +1,25 @@
+{
+  "collection": "quests_translations",
+  "field": "quests_id",
+  "related_collection": "quests",
+  "meta": {
+    "junction_field": "languages_code",
+    "many_collection": "quests_translations",
+    "many_field": "quests_id",
+    "one_allowed_collections": null,
+    "one_collection": "quests",
+    "one_collection_field": null,
+    "one_deselect_action": "delete",
+    "one_field": "translations",
+    "sort_field": null
+  },
+  "schema": {
+    "table": "quests_translations",
+    "column": "quests_id",
+    "foreign_key_table": "quests",
+    "foreign_key_column": "id",
+    "constraint_name": "quests_translations_quests_id_foreign",
+    "on_update": "NO ACTION",
+    "on_delete": "CASCADE"
+  }
+}

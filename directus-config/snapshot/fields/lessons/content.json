@@ -1,0 +1,28 @@
+{
+  "collection": "lessons",
+  "field": "content",
+  "type": "alias",
+  "meta": {
+    "collection": "lessons",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "content",
+    "group": null,
+    "hidden": false,
+    "interface": "list-m2a",
+    "note": null,
+    "options": null,
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 9,
+    "special": [
+      "m2a"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

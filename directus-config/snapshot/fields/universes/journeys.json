@@ -1,0 +1,32 @@
+{
+  "collection": "universes",
+  "field": "journeys",
+  "type": "alias",
+  "meta": {
+    "collection": "universes",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "journeys",
+    "group": null,
+    "hidden": false,
+    "interface": "list-o2m",
+    "note": null,
+    "options": {
+      "enableLink": true,
+      "sort": "sort",
+      "template": "{{translations.name}}"
+    },
+    "readonly": false,
+    "required": false,
+    "searchable": true,
+    "sort": 7,
+    "special": [
+      "o2m"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

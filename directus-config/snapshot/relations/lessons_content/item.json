@@ -1,0 +1,21 @@
+{
+  "collection": "lessons_content",
+  "field": "item",
+  "related_collection": null,
+  "meta": {
+    "junction_field": "lessons_id",
+    "many_collection": "lessons_content",
+    "many_field": "item",
+    "one_allowed_collections": [
+      "chapters",
+      "quests",
+      "quizzes",
+      "habits"
+    ],
+    "one_collection": null,
+    "one_collection_field": "collection",
+    "one_deselect_action": "nullify",
+    "one_field": null,
+    "sort_field": null
+  }
+}

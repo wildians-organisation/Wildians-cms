@@ -1,0 +1,52 @@
+{
+  "collection": "habits",
+  "field": "duration",
+  "type": "integer",
+  "meta": {
+    "collection": "habits",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "duration",
+    "group": null,
+    "hidden": false,
+    "interface": "input",
+    "note": "Le nombre de jours pendant lesquels pratiquer cette habitude",
+    "options": {
+      "alwaysShowValue": true,
+      "max": 100,
+      "maxValue": 50,
+      "min": 1,
+      "minValue": 1,
+      "placeholder": "4",
+      "stepInterval": 1
+    },
+    "readonly": false,
+    "required": true,
+    "searchable": true,
+    "sort": 6,
+    "special": null,
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  },
+  "schema": {
+    "name": "duration",
+    "table": "habits",
+    "data_type": "integer",
+    "default_value": null,
+    "max_length": null,
+    "numeric_precision": 32,
+    "numeric_scale": 0,
+    "is_nullable": false,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": null,
+    "foreign_key_column": null
+  }
+}
