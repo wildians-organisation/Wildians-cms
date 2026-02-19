@@ -7,18 +7,18 @@ type Query {
   quests_by_id(id: ID!, version: String): quests
   quests_aggregated(groupBy: [String], filter: quests_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [quests_aggregated!]!
   quests_by_version(version: String!, id: ID!): version_quests
-  lessons(filter: lessons_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [lessons!]!
-  lessons_by_id(id: ID!, version: String): lessons
-  lessons_aggregated(groupBy: [String], filter: lessons_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [lessons_aggregated!]!
-  lessons_by_version(version: String!, id: ID!): version_lessons
-  lessons_content(filter: lessons_content_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [lessons_content!]!
-  lessons_content_by_id(id: ID!, version: String): lessons_content
-  lessons_content_aggregated(groupBy: [String], filter: lessons_content_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [lessons_content_aggregated!]!
-  lessons_content_by_version(version: String!, id: ID!): version_lessons_content
   languages(filter: languages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [languages!]!
   languages_by_id(id: ID!, version: String): languages
   languages_aggregated(groupBy: [String], filter: languages_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [languages_aggregated!]!
   languages_by_version(version: String!, id: ID!): version_languages
+  lessons_content(filter: lessons_content_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [lessons_content!]!
+  lessons_content_by_id(id: ID!, version: String): lessons_content
+  lessons_content_aggregated(groupBy: [String], filter: lessons_content_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [lessons_content_aggregated!]!
+  lessons_content_by_version(version: String!, id: ID!): version_lessons_content
+  lessons(filter: lessons_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [lessons!]!
+  lessons_by_id(id: ID!, version: String): lessons
+  lessons_aggregated(groupBy: [String], filter: lessons_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [lessons_aggregated!]!
+  lessons_by_version(version: String!, id: ID!): version_lessons
   journeys_translations(filter: journeys_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [journeys_translations!]!
   journeys_translations_by_id(id: ID!, version: String): journeys_translations
   journeys_translations_aggregated(groupBy: [String], filter: journeys_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [journeys_translations_aggregated!]!
@@ -74,12 +74,12 @@ type Mutation {
   create_chapters_item(data: create_chapters_input!): chapters
   create_quests_items(filter: quests_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_quests_input!]): [quests!]!
   create_quests_item(data: create_quests_input!): quests
-  create_lessons_items(filter: lessons_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_lessons_input!]): [lessons!]!
-  create_lessons_item(data: create_lessons_input!): lessons
-  create_lessons_content_items(filter: lessons_content_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_lessons_content_input!]): [lessons_content!]!
-  create_lessons_content_item(data: create_lessons_content_input!): lessons_content
   create_languages_items(filter: languages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_languages_input!]): [languages!]!
   create_languages_item(data: create_languages_input!): languages
+  create_lessons_content_items(filter: lessons_content_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_lessons_content_input!]): [lessons_content!]!
+  create_lessons_content_item(data: create_lessons_content_input!): lessons_content
+  create_lessons_items(filter: lessons_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_lessons_input!]): [lessons!]!
+  create_lessons_item(data: create_lessons_input!): lessons
   create_journeys_translations_items(filter: journeys_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_journeys_translations_input!]): [journeys_translations!]!
   create_journeys_translations_item(data: create_journeys_translations_input!): journeys_translations
   create_universes_translations_items(filter: universes_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_universes_translations_input!]): [universes_translations!]!
@@ -110,15 +110,15 @@ type Mutation {
   update_quests_items(filter: quests_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_quests_input!): [quests!]!
   update_quests_batch(filter: quests_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_quests_input!]): [quests!]!
   update_quests_item(id: ID!, data: update_quests_input!): quests
-  update_lessons_items(filter: lessons_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_lessons_input!): [lessons!]!
-  update_lessons_batch(filter: lessons_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_lessons_input!]): [lessons!]!
-  update_lessons_item(id: ID!, data: update_lessons_input!): lessons
-  update_lessons_content_items(filter: lessons_content_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_lessons_content_input!): [lessons_content!]!
-  update_lessons_content_batch(filter: lessons_content_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_lessons_content_input!]): [lessons_content!]!
-  update_lessons_content_item(id: ID!, data: update_lessons_content_input!): lessons_content
   update_languages_items(filter: languages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_languages_input!): [languages!]!
   update_languages_batch(filter: languages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_languages_input!]): [languages!]!
   update_languages_item(id: ID!, data: update_languages_input!): languages
+  update_lessons_content_items(filter: lessons_content_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_lessons_content_input!): [lessons_content!]!
+  update_lessons_content_batch(filter: lessons_content_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_lessons_content_input!]): [lessons_content!]!
+  update_lessons_content_item(id: ID!, data: update_lessons_content_input!): lessons_content
+  update_lessons_items(filter: lessons_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_lessons_input!): [lessons!]!
+  update_lessons_batch(filter: lessons_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_lessons_input!]): [lessons!]!
+  update_lessons_item(id: ID!, data: update_lessons_input!): lessons
   update_journeys_translations_items(filter: journeys_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_journeys_translations_input!): [journeys_translations!]!
   update_journeys_translations_batch(filter: journeys_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_journeys_translations_input!]): [journeys_translations!]!
   update_journeys_translations_item(id: ID!, data: update_journeys_translations_input!): journeys_translations
@@ -159,12 +159,12 @@ type Mutation {
   delete_chapters_item(id: ID!): delete_one
   delete_quests_items(ids: [ID]!): delete_many
   delete_quests_item(id: ID!): delete_one
-  delete_lessons_items(ids: [ID]!): delete_many
-  delete_lessons_item(id: ID!): delete_one
-  delete_lessons_content_items(ids: [ID]!): delete_many
-  delete_lessons_content_item(id: ID!): delete_one
   delete_languages_items(ids: [ID]!): delete_many
   delete_languages_item(id: ID!): delete_one
+  delete_lessons_content_items(ids: [ID]!): delete_many
+  delete_lessons_content_item(id: ID!): delete_one
+  delete_lessons_items(ids: [ID]!): delete_many
+  delete_lessons_item(id: ID!): delete_one
   delete_journeys_translations_items(ids: [ID]!): delete_many
   delete_journeys_translations_item(id: ID!): delete_one
   delete_universes_translations_items(ids: [ID]!): delete_many
@@ -194,12 +194,20 @@ type Mutation {
 type Subscription {
   chapters_mutated(event: EventEnum): chapters_mutated
   quests_mutated(event: EventEnum): quests_mutated
-  lessons_mutated(event: EventEnum): lessons_mutated
-  lessons_content_mutated(event: EventEnum): lessons_content_mutated
   languages_mutated(event: EventEnum): languages_mutated
+  lessons_content_mutated(event: EventEnum): lessons_content_mutated
+  lessons_mutated(event: EventEnum): lessons_mutated
   journeys_translations_mutated(event: EventEnum): journeys_translations_mutated
   universes_translations_mutated(event: EventEnum): universes_translations_mutated
+  directus_comments_mutated(event: EventEnum): directus_comments_mutated
+  directus_files_mutated(event: EventEnum): directus_files_mutated
+  directus_permissions_mutated(event: EventEnum): directus_permissions_mutated
+  directus_policies_mutated(event: EventEnum): directus_policies_mutated
+  directus_roles_mutated(event: EventEnum): directus_roles_mutated
+  directus_users_mutated(event: EventEnum): directus_users_mutated
   lessons_translations_mutated(event: EventEnum): lessons_translations_mutated
+  directus_versions_mutated(event: EventEnum): directus_versions_mutated
+  directus_webhooks_mutated(event: EventEnum): directus_webhooks_mutated
   chapters_translations_mutated(event: EventEnum): chapters_translations_mutated
   quizzes_mutated(event: EventEnum): quizzes_mutated
   quizzes_translations_mutated(event: EventEnum): quizzes_translations_mutated
@@ -210,24 +218,16 @@ type Subscription {
   universes_mutated(event: EventEnum): universes_mutated
   directus_folders_mutated(event: EventEnum): directus_folders_mutated
   directus_panels_mutated(event: EventEnum): directus_panels_mutated
-  directus_notifications_mutated(event: EventEnum): directus_notifications_mutated
-  directus_shares_mutated(event: EventEnum): directus_shares_mutated
-  directus_presets_mutated(event: EventEnum): directus_presets_mutated
   directus_flows_mutated(event: EventEnum): directus_flows_mutated
-  directus_operations_mutated(event: EventEnum): directus_operations_mutated
-  directus_dashboards_mutated(event: EventEnum): directus_dashboards_mutated
+  directus_notifications_mutated(event: EventEnum): directus_notifications_mutated
+  directus_presets_mutated(event: EventEnum): directus_presets_mutated
+  directus_shares_mutated(event: EventEnum): directus_shares_mutated
   directus_activity_mutated(event: EventEnum): directus_activity_mutated
-  directus_translations_mutated(event: EventEnum): directus_translations_mutated
+  directus_dashboards_mutated(event: EventEnum): directus_dashboards_mutated
+  directus_operations_mutated(event: EventEnum): directus_operations_mutated
   directus_revisions_mutated(event: EventEnum): directus_revisions_mutated
-  directus_files_mutated(event: EventEnum): directus_files_mutated
-  directus_roles_mutated(event: EventEnum): directus_roles_mutated
-  directus_webhooks_mutated(event: EventEnum): directus_webhooks_mutated
-  directus_permissions_mutated(event: EventEnum): directus_permissions_mutated
-  directus_policies_mutated(event: EventEnum): directus_policies_mutated
+  directus_translations_mutated(event: EventEnum): directus_translations_mutated
   directus_access_mutated(event: EventEnum): directus_access_mutated
-  directus_comments_mutated(event: EventEnum): directus_comments_mutated
-  directus_versions_mutated(event: EventEnum): directus_versions_mutated
-  directus_users_mutated(event: EventEnum): directus_users_mutated
   directus_settings_mutated(event: EventEnum): directus_settings_mutated
   directus_sync_id_map_mutated(event: EventEnum): directus_sync_id_map_mutated
 }
@@ -1186,7 +1186,6 @@ type lessons {
   id: ID!
   journey_id(filter: journeys_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): journeys
   sort: Int
-  status: String
   image(filter: directus_files_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): directus_files
   content(filter: lessons_content_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [lessons_content]
   content_func: count_functions
@@ -1213,7 +1212,6 @@ type lessons_aggregated_count {
   id: Int
   journey_id: Int
   sort: Int
-  status: Int
   image: Int
   content: Int
   translations: Int
@@ -1624,7 +1622,6 @@ type version_lessons {
   id: ID
   journey_id: JSON
   sort: Int
-  status: String
   image: JSON
   content: JSON
   translations: JSON
@@ -1964,7 +1961,6 @@ input create_lessons_input {
   id: ID
   journey_id: create_journeys_input
   sort: Int
-  status: String
   image: create_directus_files_input
   content: [create_lessons_content_input]
   translations: [create_lessons_translations_input]
@@ -2671,7 +2667,6 @@ input lessons_filter {
   id: id_filter_operators
   journey_id: journeys_filter
   sort: number_filter_operators
-  status: string_filter_operators
   image: directus_files_filter
   content: lessons_content_quantifier_filter
   content_func: count_function_filter_operators
@@ -2690,7 +2685,6 @@ input lessons_quantifier_filter {
   id: id_filter_operators
   journey_id: journeys_filter
   sort: number_filter_operators
-  status: string_filter_operators
   image: directus_files_filter
   content: lessons_content_quantifier_filter
   content_func: count_function_filter_operators
@@ -3075,7 +3069,6 @@ input update_lessons_input {
   id: ID
   journey_id: update_journeys_input
   sort: Int
-  status: String
   image: update_directus_files_input
   content: [update_lessons_content_input]
   translations: [update_lessons_translations_input]

@@ -2,8 +2,8 @@
   "collection": "lessons",
   "meta": {
     "accountability": "all",
-    "archive_app_filter": true,
-    "archive_field": "status",
+    "archive_app_filter": false,
+    "archive_field": null,
     "archive_value": "archived",
     "collapse": "open",
     "collection": "lessons",
