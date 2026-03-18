@@ -1,19 +1,19 @@
 {
-  "collection": "quests_translations",
-  "field": "task",
-  "type": "text",
+  "collection": "equivalences",
+  "field": "max_guess",
+  "type": "integer",
   "meta": {
-    "collection": "quests_translations",
+    "collection": "equivalences",
     "conditions": null,
-    "display": null,
+    "display": "raw",
     "display_options": null,
-    "field": "task",
+    "field": "max_guess",
     "group": null,
     "hidden": false,
-    "interface": "input-rich-text-md",
-    "note": null,
+    "interface": "input",
+    "note": "The max value to cap the slider",
     "options": {
-      "folder": "397d8ec8-8ce8-4f9b-bdb5-cdd181e1c208"
+      "min": 1
     },
     "readonly": false,
     "required": true,
@@ -23,17 +23,17 @@
     "translations": null,
     "validation": null,
     "validation_message": null,
-    "width": "full"
+    "width": "half"
   },
   "schema": {
-    "name": "task",
-    "table": "quests_translations",
-    "data_type": "text",
+    "name": "max_guess",
+    "table": "equivalences",
+    "data_type": "integer",
     "default_value": null,
     "max_length": null,
-    "numeric_precision": null,
-    "numeric_scale": null,
-    "is_nullable": false,
+    "numeric_precision": 32,
+    "numeric_scale": 0,
+    "is_nullable": true,
     "is_unique": false,
     "is_indexed": false,
     "is_primary_key": false,

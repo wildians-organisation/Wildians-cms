@@ -1,34 +1,34 @@
 {
-  "collection": "quests_translations",
-  "field": "task",
-  "type": "text",
+  "collection": "equivalences",
+  "field": "date_created",
+  "type": "timestamp",
   "meta": {
-    "collection": "quests_translations",
+    "collection": "equivalences",
     "conditions": null,
-    "display": null,
+    "display": "datetime",
     "display_options": null,
-    "field": "task",
+    "field": "date_created",
     "group": null,
-    "hidden": false,
-    "interface": "input-rich-text-md",
+    "hidden": true,
+    "interface": "datetime",
     "note": null,
-    "options": {
-      "folder": "397d8ec8-8ce8-4f9b-bdb5-cdd181e1c208"
-    },
-    "readonly": false,
-    "required": true,
+    "options": null,
+    "readonly": true,
+    "required": false,
     "searchable": true,
-    "sort": 6,
-    "special": null,
+    "sort": 2,
+    "special": [
+      "date-created"
+    ],
     "translations": null,
     "validation": null,
     "validation_message": null,
-    "width": "full"
+    "width": "half"
   },
   "schema": {
-    "name": "task",
-    "table": "quests_translations",
-    "data_type": "text",
+    "name": "date_created",
+    "table": "equivalences",
+    "data_type": "timestamp with time zone",
     "default_value": null,
     "max_length": null,
     "numeric_precision": null,

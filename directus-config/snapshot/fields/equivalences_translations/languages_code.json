@@ -1,24 +1,22 @@
 {
-  "collection": "quests_translations",
-  "field": "task",
-  "type": "text",
+  "collection": "equivalences_translations",
+  "field": "languages_code",
+  "type": "string",
   "meta": {
-    "collection": "quests_translations",
+    "collection": "equivalences_translations",
     "conditions": null,
     "display": null,
     "display_options": null,
-    "field": "task",
+    "field": "languages_code",
     "group": null,
-    "hidden": false,
-    "interface": "input-rich-text-md",
+    "hidden": true,
+    "interface": null,
     "note": null,
-    "options": {
-      "folder": "397d8ec8-8ce8-4f9b-bdb5-cdd181e1c208"
-    },
+    "options": null,
     "readonly": false,
-    "required": true,
+    "required": false,
     "searchable": true,
-    "sort": 6,
+    "sort": 3,
     "special": null,
     "translations": null,
     "validation": null,
@@ -26,21 +24,21 @@
     "width": "full"
   },
   "schema": {
-    "name": "task",
-    "table": "quests_translations",
-    "data_type": "text",
+    "name": "languages_code",
+    "table": "equivalences_translations",
+    "data_type": "character varying",
     "default_value": null,
-    "max_length": null,
+    "max_length": 255,
     "numeric_precision": null,
     "numeric_scale": null,
-    "is_nullable": false,
+    "is_nullable": true,
     "is_unique": false,
     "is_indexed": false,
     "is_primary_key": false,
     "is_generated": false,
     "generation_expression": null,
     "has_auto_increment": false,
-    "foreign_key_table": null,
-    "foreign_key_column": null
+    "foreign_key_table": "languages",
+    "foreign_key_column": "code"
   }
 }

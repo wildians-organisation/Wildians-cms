@@ -1,0 +1,56 @@
+{
+  "collection": "equivalences",
+  "field": "compared_asset",
+  "type": "string",
+  "meta": {
+    "collection": "equivalences",
+    "conditions": null,
+    "display": "raw",
+    "display_options": null,
+    "field": "compared_asset",
+    "group": null,
+    "hidden": false,
+    "interface": "input",
+    "note": "name of the icon as listed in Figma",
+    "options": {
+      "choices": null,
+      "placeholder": "haricotsrouges.svg",
+      "trim": true
+    },
+    "readonly": false,
+    "required": true,
+    "searchable": true,
+    "sort": 7,
+    "special": null,
+    "translations": null,
+    "validation": {
+      "_and": [
+        {
+          "compared_asset": {
+            "_regex": "^(abricot\\.svg|agriculture-jour-fr\\.svg|ail\\.svg|alimentationordinateur\\.svg|alimentationsmartphone\\.svg|ananas\\.svg|armoire\\.svg|artichaut\\.svg|article-sport\\.svg|asperge\\.svg|aspirateur\\.svg|aubergine\\.svg|autocar\\.svg|aviation-annee-fr\\.svg|avion-johannesburg-rugby\\.svg|avion-pny\\.svg|avion\\.svg|avocat\\.svg|baguette\\.svg|banane\\.svg|betterave\\.svg|beurre\\.svg|biere\\.svg|ble\\.svg|blette\\.svg|boeuf\\.svg|bonbons\\.svg|boucheeschocolat\\.svg|bouilloire\\.svg|boulgour\\.svg|box\\.svg|briques-batiment\\.svg|brocoli\\.svg|brownie\\.svg|burgerpoulet\\.svg|burgervegetarien\\.svg|buselectrique\\.svg|busgnv\\.svg|busthermique\\.svg|cabillaud\\.svg|cafe\\.svg|cafetieredosette\\.svg|cafetiereexpresso\\.svg|cafetierefiltre\\.svg|campus-data-jour\\.svg|canapeconvertible\\.svg|canapetextile\\.svg|canard\\.svg|carambole\\.svg|carotte\\.svg|casquevr\\.svg|cassis\\.svg|celeri\\.svg|cerise\\.svg|chaiseenbois\\.svg|champignonmorille\\.svg|chataigne\\.svg|chauffage-annee-fr\\.svg|chauffage-jour-fr\\.svg|chauffageelectrique\\.svg|chauffagefioul\\.svg|chauffagegaz\\.svg|chaussonauxpommes\\.svg|chaussuresdesport\\.svg|chaussuresencuir\\.svg|chaussuresentissu\\.svg|cheeseburger\\.svg|chemiseencoton\\.svg|chemiseenviscose\\.svg|chou\\.svg|choudebruxelles\\.svg|choufleur\\.svg|cigarette-megot\\.svg|citron\\.svg|clefusb\\.svg|clementine\\.svg|click-collect-pieds\\.svg|click-collect\\.svg|climatisation-jour-fr\\.svg|climatiseur\\.svg|coing\\.svg|colis-vetements-parcours-classique\\.svg|colis-vetements-ultra-fastfashion\\.svg|concombre\\.svg|construction-maison\\.svg|cookies\\.svg|courge\\.svg|courgette\\.svg|covoiturage\\.svg|covoiturageelectrique\\.svg|cresson\\.svg|crevettes\\.svg|croissant\\.svg|datte\\.svg|disquedur\\.svg|domicile\\.svg|dorade\\.svg|doudou\\.svg|déchets-eau-jour-fr\\.svg|eaudurobinet\\.svg|eauenbouteille\\.svg|echalote\\.svg|ecran\\.svg|email\\.svg|enceintebluetooth\\.svg|endive\\.svg|epinard\\.svg|fenouil\\.svg|ferry\\.svg|feta\\.svg|figue\\.svg|forets-prairie-jour-fr\\.svg|fourelectrique\\.svg|fraise\\.svg|framboise\\.svg|francais\\.svg|friends\\.svg|frites\\.svg|fromageblanc\\.svg|fromagebleu\\.svg|fromagepatedure\\.svg|fromagepatemolle\\.svg|fruitdelapassion\\.svg|fusee-detresse\\.svg|game-of-thrones\\.svg|grenade\\.svg|groseille\\.svg|haricotsrouges\\.svg|haricotvert\\.svg|harry-potter\\.svg|huile-moteur\\.svg|huitres\\.svg|intercites\\.svg|jeans\\.svg|jet\\.svg|journee-ski\\.svg|kaki\\.svg|kebab\\.svg|kiwi\\.svg|laitdesoja\\.svg|laitdevache\\.svg|laitue\\.svg|lapin\\.svg|lavelinge\\.svg|lavevaisselle\\.svg|lentilles\\.svg|lieucolin\\.svg|lit\\.svg|mache\\.svg|madeleines\\.svg|magasin-pied\\.svg|magasin-pieds\\.svg|magasin\\.svg|mais\\.svg|mandarine\\.svg|mangue\\.svg|manteau\\.svg|marteau\\.svg|matieregrassevegetale\\.svg|medicaments\\.svg|melon\\.svg|metro\\.svg|moto\\.svg|moules\\.svg|mozza\\.svg|mure\\.svg|myrtille\\.svg|navet\\.svg|nectarine\\.svg|noisette\\.svg|noix\\.svg|noixdecoco\\.svg|nuitee-location\\.svg|nuitee-residence-secondaire\\.svg|nuiteecamping\\.svg|nuiteehotel\\.svg|numerique-annee-fr\\.svg|numerique-jour-fr\\.svg|objectif-2t\\.svg|oeufs\\.svg|oignon\\.svg|orange\\.svg|ordinateurfixeparticulier\\.svg|ordinateurfixeprofessionnel\\.svg|ordinateurportable\\.svg|painauraisin\\.svg|painchocolat\\.svg|paindemie\\.svg|pamplemousse\\.svg|panais\\.svg|panneau-solaire\\.svg|parc-bovin-annee-fr\\.svg|pasteque\\.svg|pateatartiner\\.svg|pates\\.svg|peche\\.svg|petit-extincteur\\.svg|petitpois\\.svg|piles\\.svg|pizza4fromages\\.svg|pneu\\.svg|poeleabois\\.svg|poeleagranule\\.svg|point-relais\\.svg|poire\\.svg|poireau\\.svg|poischiches\\.svg|poivron\\.svg|polo\\.svg|pomme\\.svg|pommedeterre\\.svg|pompeachaleur\\.svg|population-annee-fr\\.svg|porc\\.svg|'pot-peinture 1\\.svg'|potiron\\.svg|poulet\\.svg|prune\\.svg|pullenacrylique\\.svg|pullencotonrecycle\\.svg|pullenlaine\\.svg|quinoa\\.svg|radis\\.svg|raisin\\.svg|rechercheweb\\.svg|refrigirateur\\.svg|reineclaude\\.svg|remplir-piscine\\.svg|repasavecduboeuf\\.svg|repasavecdupoissonblanc\\.svg|repasavecdupoissongras\\.svg|repasavecdupoulet\\.svg|repasvegetalien\\.svg|repasvegetarien\\.svg|rer\\.svg|reseaudechaleur\\.svg|rhubarbe\\.svg|riz\\.svg|robeencoton\\.svg|robeenpolyester\\.svg|robeenviscose\\.svg|salsifis\\.svg|sardines\\.svg|saumontruite\\.svg|scooter\\.svg|seringue\\.svg|smartphone\\.svg|soda\\.svg|spam\\.svg|stockagedonnee\\.svg|streamingvideo\\.svg|sushismakis\\.svg|sweatencoton\\.svg|tableenbois\\.svg|tabletteclassique\\.svg|taylor-swift\\.svg|telechargement\\.svg|telephonebasique\\.svg|television\\.svg|ter\\.svg|tgv-paris-berlin\\.svg|tgv-paris-marseille\\.svg|tgv\\.svg|thon\\.svg|thé\\.svg|tofu\\.svg|tomate\\.svg|topinambour\\.svg|trains-jour-fr\\.svg|tramway\\.svg|transports-marche\\.svg|transports-velo-mecanique\\.svg|trottinette\\.svg|'truelle-jardin 1\\.svg'|tshirtencoton\\.svg|tshirtenpolyester\\.svg|veau\\.svg|velo\\.svg|veloelectrique\\.svg|vesteimpermeable\\.svg|vestesimilicuir\\.svg|vin\\.svg|visioconference\\.svg|voiture-annee-fr\\.svg|voiture-heure-fr\\.svg|voiture-jour-fr\\.svg|voiture-lille-nimes\\.svg|voiture-terre\\.svg|voitureelectrique\\.svg|voiturethermique\\.svg|yaourt\\.svg)$"
+          }
+        }
+      ]
+    },
+    "validation_message": "Must be one of the existing icon names",
+    "width": "half"
+  },
+  "schema": {
+    "name": "compared_asset",
+    "table": "equivalences",
+    "data_type": "character varying",
+    "default_value": null,
+    "max_length": 255,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": false,
+    "is_unique": false,
+    "is_indexed": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": null,
+    "foreign_key_column": null
+  }
+}

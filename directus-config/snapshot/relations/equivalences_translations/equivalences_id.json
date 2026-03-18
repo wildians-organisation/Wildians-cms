@@ -1,0 +1,25 @@
+{
+  "collection": "equivalences_translations",
+  "field": "equivalences_id",
+  "related_collection": "equivalences",
+  "meta": {
+    "junction_field": "languages_code",
+    "many_collection": "equivalences_translations",
+    "many_field": "equivalences_id",
+    "one_allowed_collections": null,
+    "one_collection": "equivalences",
+    "one_collection_field": null,
+    "one_deselect_action": "delete",
+    "one_field": "translations",
+    "sort_field": null
+  },
+  "schema": {
+    "table": "equivalences_translations",
+    "column": "equivalences_id",
+    "foreign_key_table": "equivalences",
+    "foreign_key_column": "id",
+    "constraint_name": "equivalences_translations_equivalences_id_foreign",
+    "on_update": "NO ACTION",
+    "on_delete": "CASCADE"
+  }
+}

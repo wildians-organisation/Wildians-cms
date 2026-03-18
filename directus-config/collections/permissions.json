@@ -156,6 +156,102 @@
     "_syncId": "76e9cab6-3b5f-408e-b3ae-2afec2c02e76"
   },
   {
+    "collection": "equivalences_translations",
+    "action": "create",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "e2da0fa1-c2cf-40d0-b166-17794f1a6f6d"
+  },
+  {
+    "collection": "equivalences_translations",
+    "action": "delete",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "9b593b3f-54d1-4651-a1be-50990af8d435"
+  },
+  {
+    "collection": "equivalences_translations",
+    "action": "read",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "e962f7e2-7c4c-4892-afa0-773f5e7a49af"
+  },
+  {
+    "collection": "equivalences_translations",
+    "action": "update",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "34d6e8df-03c9-4823-bae2-9bc3b60b1a09"
+  },
+  {
+    "collection": "equivalences",
+    "action": "create",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "e65598f4-4144-4973-8abf-c244fe7dd0c0"
+  },
+  {
+    "collection": "equivalences",
+    "action": "delete",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "e7d1b5e5-681b-44b8-ba14-46cd6039c1e9"
+  },
+  {
+    "collection": "equivalences",
+    "action": "read",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "76ec76a9-c6d7-4dd5-b5ae-97528e309570"
+  },
+  {
+    "collection": "equivalences",
+    "action": "update",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "608522c5-2a63-4bf6-9ae6-e55698fa091c"
+  },
+  {
     "collection": "habits_translations",
     "action": "create",
     "permissions": null,
