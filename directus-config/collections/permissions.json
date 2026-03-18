@@ -9,7 +9,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "d743a4ba-abd6-45b4-ba1d-d078e820333d"
+    "_syncId": "f660edf0-fec0-4bf3-8f0a-80653a1c8fe5"
   },
   {
     "collection": "chapters_translations",
@@ -21,7 +21,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "4ac127b3-7904-4f89-92fb-179027686a03"
+    "_syncId": "f03fabfa-6921-4f0e-80db-08d36f5dd4f6"
   },
   {
     "collection": "chapters_translations",
@@ -33,7 +33,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "ad81e320-c1a8-42f9-ad6e-6ac4f4c3044c"
+    "_syncId": "44c6c35d-23cb-4ed4-8a82-4ba546206c1d"
   },
   {
     "collection": "chapters_translations",
@@ -45,7 +45,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "61170bc0-1da6-40bd-86c4-7cef16be1674"
+    "_syncId": "d8863d82-95d9-4137-8c41-fc25f1b1a12d"
   },
   {
     "collection": "chapters",
@@ -57,7 +57,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "ebeb4783-966f-4548-a01a-ed2d379ba2bc"
+    "_syncId": "21debb2b-151e-4f44-b2b7-12e774529d9f"
   },
   {
     "collection": "chapters",
@@ -69,7 +69,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "b732e79d-ca79-415c-a0cc-a4b32a1d8a96"
+    "_syncId": "d0638a05-30eb-46bf-828a-2e46b72e448a"
   },
   {
     "collection": "chapters",
@@ -81,7 +81,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "4f91fa91-236d-4cba-9292-c70121ffcc46"
+    "_syncId": "00a494a0-2d90-4307-a748-7399fa94c007"
   },
   {
     "collection": "chapters",
@@ -93,7 +93,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "b23f8b1a-1225-405f-bf9a-4f41b44c9182"
+    "_syncId": "877dd75f-3c02-42eb-84e1-cff473ccc7b6"
   },
   {
     "collection": "directus_files",
@@ -105,7 +105,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "6b4464a8-434f-4725-8f74-1d675e249e05"
+    "_syncId": "e44548d1-8e65-4f6e-a518-4f44dbcb2c2c"
   },
   {
     "collection": "directus_files",
@@ -117,7 +117,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "188e1122-3310-4311-a763-8773f9af29ad"
+    "_syncId": "ca2ded67-aac8-4284-97f6-6432204c1b8e"
   },
   {
     "collection": "directus_files",
@@ -129,7 +129,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "263b3e12-4c6f-4b7a-ba17-6ac440a2dd8c"
+    "_syncId": "8ecab47e-5a6f-4280-8897-4d734a569eae"
   },
   {
     "collection": "directus_files",
@@ -141,7 +141,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "b53c06a4-0631-44bb-8c80-9f1eb7869a3f"
+    "_syncId": "caa99fee-5831-41e1-b48f-034cadfefdf9"
   },
   {
     "collection": "directus_folders",
@@ -153,7 +153,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "2c4db230-c214-4dee-af86-0dd3ab4ecfb5"
+    "_syncId": "4187b296-1acd-4db0-883f-0dd7d39436bf"
   },
   {
     "collection": "habits_translations",
@@ -165,7 +165,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "b7a79497-edff-4cd7-ab33-81d3ea39b0fc"
+    "_syncId": "a1f2aa9f-5635-4bc9-80f2-210d063ba564"
   },
   {
     "collection": "habits_translations",
@@ -177,7 +177,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "07fbe90d-d0b2-42fa-9f6b-243c0bb5aca7"
+    "_syncId": "383c1ac9-0185-4e24-9e1f-0a9d34708119"
   },
   {
     "collection": "habits_translations",
@@ -189,7 +189,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "ede84243-cdef-467d-9684-62dbdd7b70e2"
+    "_syncId": "101baa86-82cc-4865-a23b-440e1e56b4ce"
   },
   {
     "collection": "habits_translations",
@@ -201,7 +201,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "8a12cce5-1e76-4d42-acbe-f7535f22e333"
+    "_syncId": "b741470b-d3ea-4465-aaf6-ff4ef9e14b36"
   },
   {
     "collection": "habits",
@@ -213,7 +213,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "05d1f0dd-6a27-4b58-81f4-846faefbf328"
+    "_syncId": "7fefc7db-7a1a-4e25-93be-49247b98899a"
   },
   {
     "collection": "habits",
@@ -225,7 +225,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "33225f24-0c0b-4cd5-86c8-b61b831177cb"
+    "_syncId": "b8a089a0-1bb6-4078-85c1-8f1c9acd52a1"
   },
   {
     "collection": "habits",
@@ -237,7 +237,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "fb3bc3ab-82a2-4c3e-9234-b286ce4510ef"
+    "_syncId": "520be034-7c79-4485-935b-38a6ee7ffbfb"
   },
   {
     "collection": "habits",
@@ -249,7 +249,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "662da089-b077-4cce-861e-26c5e412c9f8"
+    "_syncId": "cb6a144b-77ec-4077-9c07-1c8cbb40155b"
   },
   {
     "collection": "journeys_translations",
@@ -261,7 +261,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "3ce02171-a86d-40fa-9d1f-2ff8dea2162a"
+    "_syncId": "bb75435c-a403-4b38-aeed-8d2a86aec746"
   },
   {
     "collection": "journeys_translations",
@@ -273,7 +273,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "0aa84766-00f9-4525-a705-e1880759d077"
+    "_syncId": "fa9cf5e8-e112-4546-a9bc-7d605945ceed"
   },
   {
     "collection": "journeys_translations",
@@ -285,7 +285,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "90f9b6a4-30f7-4f58-8458-0823cace6fb1"
+    "_syncId": "e3af8f2b-9050-4625-95b7-51d10bd02df0"
   },
   {
     "collection": "journeys_translations",
@@ -297,7 +297,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "8f0c197c-7f7d-4a4a-98f1-3b82d4338c70"
+    "_syncId": "966bbb95-e3ec-43e3-bad0-7f19c0f7693f"
   },
   {
     "collection": "journeys",
@@ -309,7 +309,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "701cd3f2-ddbb-46e1-88de-fd3042b43c2e"
+    "_syncId": "155acf8e-090d-44ca-825a-534d253cecd9"
   },
   {
     "collection": "journeys",
@@ -321,7 +321,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "e6f64988-0e8a-447e-9113-5552154df30d"
+    "_syncId": "fb6bff4f-2c2e-4a1d-8036-f952b989c589"
   },
   {
     "collection": "journeys",
@@ -333,7 +333,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "60db22b5-102f-4f42-bb65-b89209cde423"
+    "_syncId": "c3d36a1c-9e5f-4280-9c3d-3dbe708f90c3"
   },
   {
     "collection": "journeys",
@@ -345,7 +345,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "2ce648f8-e48e-40a9-9f42-e77c5672eb14"
+    "_syncId": "b4eb89a2-9770-4a35-9d5f-9e0376b58f64"
   },
   {
     "collection": "languages",
@@ -357,7 +357,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "1e472205-91a0-4d76-98d6-e5602c3820a9"
+    "_syncId": "1545fd97-9976-49f9-919b-adaca72f269c"
   },
   {
     "collection": "lessons_content",
@@ -369,7 +369,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "bf26de97-5936-43ee-8914-2bfcf807ac52"
+    "_syncId": "66527e42-c50f-4fcd-bf7a-b87ab2c36571"
   },
   {
     "collection": "lessons_content",
@@ -381,7 +381,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "1e93627c-617b-4229-9ce1-f03394f407de"
+    "_syncId": "d3174b31-bb28-4584-8631-875b77bf061e"
   },
   {
     "collection": "lessons_content",
@@ -393,7 +393,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "051fc921-eb3f-4007-b1b6-cb6d241653e6"
+    "_syncId": "a2927372-ee26-415c-9310-83400317018b"
   },
   {
     "collection": "lessons_content",
@@ -405,7 +405,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "7ff2a453-94aa-4357-b928-f24d39e33595"
+    "_syncId": "313ad900-2673-43ab-b5d4-d86f62a48770"
   },
   {
     "collection": "lessons_translations",
@@ -417,7 +417,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "6cbc66ef-c3df-4ab8-955e-7a0ed2ed29ae"
+    "_syncId": "8aaf05c7-5da8-40ea-8af4-9cf3ffaea762"
   },
   {
     "collection": "lessons_translations",
@@ -429,7 +429,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "0ed9c420-a748-4bd9-82e2-44bd8caec3a0"
+    "_syncId": "4f1fff81-8e27-4c39-a022-9301b14bd642"
   },
   {
     "collection": "lessons_translations",
@@ -441,7 +441,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "382c494f-b761-494f-8fb2-0c6ca811dc54"
+    "_syncId": "cc704b63-1f5b-4d34-bbd4-4c415eda49b5"
   },
   {
     "collection": "lessons_translations",
@@ -453,7 +453,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "a3c829b1-5812-47c2-a93c-0c41052141f1"
+    "_syncId": "eb61c657-fdf4-4ee3-b6a8-e9f19e5d5d7b"
   },
   {
     "collection": "lessons",
@@ -465,7 +465,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "1defc2d6-1c3a-451e-8656-b34fdc3c1d2b"
+    "_syncId": "b7c82254-9da1-4457-85ee-44855d60109f"
   },
   {
     "collection": "lessons",
@@ -477,7 +477,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "8a911a66-2a24-4eec-8aae-cb8ccd67521f"
+    "_syncId": "cdca06b1-17ef-4dec-87f3-4b45eb4866a8"
   },
   {
     "collection": "lessons",
@@ -489,7 +489,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "70d4de0e-2544-49a4-9300-f29180f2acd6"
+    "_syncId": "9435be6f-3307-426f-8952-d20ccd77c8bf"
   },
   {
     "collection": "lessons",
@@ -501,7 +501,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "066ece4b-83cc-4c8c-881b-6afee08d8e75"
+    "_syncId": "682ce1f2-ff4b-41cb-8b11-b6477a5e9546"
   },
   {
     "collection": "quests_translations",
@@ -513,7 +513,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "9440bcd0-92b0-4284-8c77-384ebf3bde5f"
+    "_syncId": "0752a338-5138-467d-800d-6bfc6275978d"
   },
   {
     "collection": "quests_translations",
@@ -525,7 +525,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "8252b638-66a4-4686-bdef-fad42197c605"
+    "_syncId": "62796c68-f9ff-48bd-b221-e2f6e7b27aae"
   },
   {
     "collection": "quests_translations",
@@ -537,7 +537,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "0d37dc0c-6efc-48ea-b717-421fa766fafb"
+    "_syncId": "23759c4b-0731-4f23-bcff-db7e8e8b517f"
   },
   {
     "collection": "quests_translations",
@@ -549,7 +549,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "6f0b1043-4017-4cc3-8e5b-7db6c3396e84"
+    "_syncId": "6a380356-2457-483b-a3d5-cead79449982"
   },
   {
     "collection": "quests",
@@ -561,7 +561,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "8d5b5d6a-88d1-482e-ac47-18d2a93b1327"
+    "_syncId": "1a6845cf-4cf4-43b1-91af-4c2925d21df0"
   },
   {
     "collection": "quests",
@@ -573,7 +573,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "2ef56600-da63-4f03-b0ea-3f95dd7ae642"
+    "_syncId": "adc2ad2a-1d1c-432d-b0ea-5f132f062ed9"
   },
   {
     "collection": "quests",
@@ -585,7 +585,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "1371750f-cffe-4864-9ca4-73ab8b2c40ab"
+    "_syncId": "b460ff84-6290-4b2b-9d18-1d2d4f51025c"
   },
   {
     "collection": "quests",
@@ -597,7 +597,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "19ecd392-5881-4204-8971-c269ff6975e9"
+    "_syncId": "4b8afdd2-c0e4-482a-a1a3-786ce2b283a2"
   },
   {
     "collection": "quizzes_translations",
@@ -609,7 +609,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "266afebb-ede3-4e46-826f-f2a24e4bce83"
+    "_syncId": "691bea5d-4b03-479c-be56-3633c47119c1"
   },
   {
     "collection": "quizzes_translations",
@@ -621,7 +621,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "e7a1e72a-6d65-4f9e-91b4-50889b55cacb"
+    "_syncId": "dce55396-d803-4edc-8452-a84389ae1128"
   },
   {
     "collection": "quizzes_translations",
@@ -633,7 +633,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "74a534e0-d636-4239-86d9-a879fa87fb20"
+    "_syncId": "f738b08e-f795-4686-aba8-298fd7515775"
   },
   {
     "collection": "quizzes_translations",
@@ -645,7 +645,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "821eed2e-2b6d-461c-a614-2258bae1971e"
+    "_syncId": "c97fbd77-2f6b-473b-a421-ab6ac482efa1"
   },
   {
     "collection": "quizzes",
@@ -657,7 +657,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "0bcbe2cc-ffee-4fe4-95d4-986174c7c20c"
+    "_syncId": "538c8c84-fb32-49ac-b90d-20fce68c8f79"
   },
   {
     "collection": "quizzes",
@@ -669,7 +669,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "d8713c2f-79ee-4337-bbb3-510e77d0b250"
+    "_syncId": "2621539c-0720-411a-9363-81d06e4e1825"
   },
   {
     "collection": "quizzes",
@@ -681,7 +681,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "2eff021a-f76d-45e1-837a-234e8c39d312"
+    "_syncId": "7fe1cf51-0ca0-4d09-afc5-1913c888e882"
   },
   {
     "collection": "quizzes",
@@ -693,7 +693,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "1e727f31-c16f-4f02-a8a0-4f98f6f9debc"
+    "_syncId": "f838e5d3-bc82-4a79-88e6-390ed8b66afb"
   },
   {
     "collection": "universes_translations",
@@ -705,7 +705,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "caedc241-7646-4efb-b823-661dca124d9a"
+    "_syncId": "7f7e2786-b7f4-4e67-827a-d5c522927672"
   },
   {
     "collection": "universes_translations",
@@ -717,7 +717,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "1b3ba46d-37dc-41d0-93d4-8a9dc177fc58"
+    "_syncId": "8dba386e-f0d0-4645-971a-a23fc486158c"
   },
   {
     "collection": "universes_translations",
@@ -729,7 +729,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "434c5019-4cd5-46bf-9986-606a7eac0321"
+    "_syncId": "a87e332a-97a3-4850-903a-ec27a8e39927"
   },
   {
     "collection": "universes_translations",
@@ -741,7 +741,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "581f6394-97f6-4c98-a97a-39b16bf9cdd6"
+    "_syncId": "c03b32f0-fc4b-484f-bf25-e3dc074d8318"
   },
   {
     "collection": "universes",
@@ -753,7 +753,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "141021bb-db6b-4d73-a7a4-4e0af769e87d"
+    "_syncId": "9db09dc2-ba41-4665-bb73-4f50e3af1024"
   },
   {
     "collection": "universes",
@@ -765,7 +765,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "c381efbd-24e9-432a-8580-7a80d4bf187e"
+    "_syncId": "6ac860f5-aaec-4a33-a13f-19e02786a308"
   },
   {
     "collection": "universes",
@@ -777,7 +777,7 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "6352afb0-eb0b-4ff0-acab-56784a038398"
+    "_syncId": "bfa7bf1a-1d69-475a-909c-b632b3bf390f"
   },
   {
     "collection": "universes",
@@ -789,6 +789,6 @@
       "*"
     ],
     "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
-    "_syncId": "1f2f857a-4826-4696-ba3a-e56710891327"
+    "_syncId": "05398501-8c7e-496f-92b8-969a280dea4c"
   }
 ]

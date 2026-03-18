@@ -280,6 +280,8 @@ type Subscription {
   quizzes_translations_mutated(event: EventEnum): quizzes_translations_mutated
   universes_mutated(event: EventEnum): universes_mutated
   universes_translations_mutated(event: EventEnum): universes_translations_mutated
+  equivalences_mutated(event: EventEnum): equivalences_mutated
+  equivalences_translations_mutated(event: EventEnum): equivalences_translations_mutated
 }
 
 """The `Boolean` scalar type represents `true` or `false`."""
@@ -344,7 +346,7 @@ enum graphql_sdl_scope {
   system
 }
 
-union lessons_content_item_union = chapters | quests | quizzes | habits
+union lessons_content_item_union = chapters | quests | quizzes | habits | equivalences
 
 type auth_tokens {
   access_token: String
@@ -1673,6 +1675,45 @@ type directus_webhooks_mutated {
   data: directus_webhooks
 }
 
+type equivalences {
+  id: ID!
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+
+  """La réponse correcte de l'équivalence"""
+  count: Int
+
+  """La valeur max que peut choisir l'utilisateur"""
+  max_guess: Int
+  compared_asset: String!
+  comparing_asset: String!
+  translations(filter: equivalences_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [equivalences_translations]
+  translations_func: count_functions
+}
+
+type equivalences_mutated {
+  key: ID!
+  event: EventEnum
+  data: equivalences
+}
+
+type equivalences_translations {
+  id: ID!
+  equivalences_id(filter: equivalences_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): equivalences
+  languages_code(filter: languages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): languages
+
+  """La question a poser à l'utilisateur"""
+  title: String!
+}
+
+type equivalences_translations_mutated {
+  key: ID!
+  event: EventEnum
+  data: equivalences_translations
+}
+
 type habits {
   id: ID!
   date_created: Date
@@ -2944,6 +2985,43 @@ input directus_webhooks_filter {
   _or: [directus_webhooks_filter]
 }
 
+input equivalences_filter {
+  id: id_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  count: number_filter_operators
+  max_guess: number_filter_operators
+  compared_asset: string_filter_operators
+  comparing_asset: string_filter_operators
+  translations: equivalences_translations_quantifier_filter
+  translations_func: count_function_filter_operators
+  _and: [equivalences_filter]
+  _or: [equivalences_filter]
+}
+
+input equivalences_translations_filter {
+  id: number_filter_operators
+  equivalences_id: equivalences_filter
+  languages_code: languages_filter
+  title: string_filter_operators
+  _and: [equivalences_translations_filter]
+  _or: [equivalences_translations_filter]
+}
+
+""""""
+input equivalences_translations_quantifier_filter {
+  id: number_filter_operators
+  equivalences_id: equivalences_filter
+  languages_code: languages_filter
+  title: string_filter_operators
+  _and: [equivalences_translations_filter]
+  _or: [equivalences_translations_filter]
+  _some: equivalences_translations_filter
+  _none: equivalences_translations_filter
+}
+
 input habits_filter {
   id: id_filter_operators
   date_created: date_filter_operators
@@ -3094,6 +3172,7 @@ input lessons_content_filter {
   item__quests: quests_filter
   item__quizzes: quizzes_filter
   item__habits: habits_filter
+  item__equivalences: equivalences_filter
 }
 
 """"""
@@ -3110,6 +3189,7 @@ input lessons_content_quantifier_filter {
   item__quests: quests_filter
   item__quizzes: quizzes_filter
   item__habits: habits_filter
+  item__equivalences: equivalences_filter
 }
 
 input lessons_filter {

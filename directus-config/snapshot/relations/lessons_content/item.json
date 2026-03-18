@@ -10,7 +10,8 @@
       "chapters",
       "quests",
       "quizzes",
-      "habits"
+      "habits",
+      "equivalences"
     ],
     "one_collection": null,
     "one_collection_field": "collection",

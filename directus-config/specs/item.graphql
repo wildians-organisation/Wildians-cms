@@ -67,6 +67,14 @@ type Query {
   universes_translations_by_id(id: ID!, version: String): universes_translations
   universes_translations_aggregated(groupBy: [String], filter: universes_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [universes_translations_aggregated!]!
   universes_translations_by_version(version: String!, id: ID!): version_universes_translations
+  equivalences(filter: equivalences_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [equivalences!]!
+  equivalences_by_id(id: ID!, version: String): equivalences
+  equivalences_aggregated(groupBy: [String], filter: equivalences_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [equivalences_aggregated!]!
+  equivalences_by_version(version: String!, id: ID!): version_equivalences
+  equivalences_translations(filter: equivalences_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [equivalences_translations!]!
+  equivalences_translations_by_id(id: ID!, version: String): equivalences_translations
+  equivalences_translations_aggregated(groupBy: [String], filter: equivalences_translations_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [equivalences_translations_aggregated!]!
+  equivalences_translations_by_version(version: String!, id: ID!): version_equivalences_translations
 }
 
 type Mutation {
@@ -104,6 +112,10 @@ type Mutation {
   create_universes_item(data: create_universes_input!): universes
   create_universes_translations_items(filter: universes_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_universes_translations_input!]): [universes_translations!]!
   create_universes_translations_item(data: create_universes_translations_input!): universes_translations
+  create_equivalences_items(filter: equivalences_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_equivalences_input!]): [equivalences!]!
+  create_equivalences_item(data: create_equivalences_input!): equivalences
+  create_equivalences_translations_items(filter: equivalences_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [create_equivalences_translations_input!]): [equivalences_translations!]!
+  create_equivalences_translations_item(data: create_equivalences_translations_input!): equivalences_translations
   update_chapters_items(filter: chapters_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_chapters_input!): [chapters!]!
   update_chapters_batch(filter: chapters_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_chapters_input!]): [chapters!]!
   update_chapters_item(id: ID!, data: update_chapters_input!): chapters
@@ -155,6 +167,12 @@ type Mutation {
   update_universes_translations_items(filter: universes_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_universes_translations_input!): [universes_translations!]!
   update_universes_translations_batch(filter: universes_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_universes_translations_input!]): [universes_translations!]!
   update_universes_translations_item(id: ID!, data: update_universes_translations_input!): universes_translations
+  update_equivalences_items(filter: equivalences_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_equivalences_input!): [equivalences!]!
+  update_equivalences_batch(filter: equivalences_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_equivalences_input!]): [equivalences!]!
+  update_equivalences_item(id: ID!, data: update_equivalences_input!): equivalences
+  update_equivalences_translations_items(filter: equivalences_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, ids: [ID]!, data: update_equivalences_translations_input!): [equivalences_translations!]!
+  update_equivalences_translations_batch(filter: equivalences_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String, data: [update_equivalences_translations_input!]): [equivalences_translations!]!
+  update_equivalences_translations_item(id: ID!, data: update_equivalences_translations_input!): equivalences_translations
   delete_chapters_items(ids: [ID]!): delete_many
   delete_chapters_item(id: ID!): delete_one
   delete_chapters_translations_items(ids: [ID]!): delete_many
@@ -189,6 +207,10 @@ type Mutation {
   delete_universes_item(id: ID!): delete_one
   delete_universes_translations_items(ids: [ID]!): delete_many
   delete_universes_translations_item(id: ID!): delete_one
+  delete_equivalences_items(ids: [ID]!): delete_many
+  delete_equivalences_item(id: ID!): delete_one
+  delete_equivalences_translations_items(ids: [ID]!): delete_many
+  delete_equivalences_translations_item(id: ID!): delete_one
 }
 
 type Subscription {
@@ -230,6 +252,8 @@ type Subscription {
   quizzes_translations_mutated(event: EventEnum): quizzes_translations_mutated
   universes_mutated(event: EventEnum): universes_mutated
   universes_translations_mutated(event: EventEnum): universes_translations_mutated
+  equivalences_mutated(event: EventEnum): equivalences_mutated
+  equivalences_translations_mutated(event: EventEnum): equivalences_translations_mutated
 }
 
 """The `Boolean` scalar type represents `true` or `false`."""
@@ -278,7 +302,7 @@ enum EventEnum {
   delete
 }
 
-union lessons_content_item_union = chapters | quests | quizzes | habits
+union lessons_content_item_union = chapters | quests | quizzes | habits | equivalences
 
 type chapters {
   date_created: Date
@@ -957,6 +981,107 @@ type directus_webhooks_mutated {
   data: directus_webhooks
 }
 
+type equivalences {
+  id: ID!
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+
+  """La réponse correcte de l'équivalence"""
+  count: Int
+
+  """La valeur max que peut choisir l'utilisateur"""
+  max_guess: Int
+  compared_asset: String!
+  comparing_asset: String!
+  translations(filter: equivalences_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [equivalences_translations]
+  translations_func: count_functions
+}
+
+type equivalences_aggregated {
+  group: JSON
+  countAll: Int
+  count: equivalences_aggregated_count
+  countDistinct: equivalences_aggregated_count
+  avg: equivalences_aggregated_fields
+  sum: equivalences_aggregated_fields
+  avgDistinct: equivalences_aggregated_fields
+  sumDistinct: equivalences_aggregated_fields
+  min: equivalences_aggregated_fields
+  max: equivalences_aggregated_fields
+}
+
+type equivalences_aggregated_count {
+  id: Int
+  date_created: Int
+  date_updated: Int
+
+  """La réponse correcte de l'équivalence"""
+  count: Int
+
+  """La valeur max que peut choisir l'utilisateur"""
+  max_guess: Int
+  compared_asset: Int
+  comparing_asset: Int
+  translations: Int
+}
+
+type equivalences_aggregated_fields {
+  """La réponse correcte de l'équivalence"""
+  count: Float
+
+  """La valeur max que peut choisir l'utilisateur"""
+  max_guess: Float
+}
+
+type equivalences_mutated {
+  key: ID!
+  event: EventEnum
+  data: equivalences
+}
+
+type equivalences_translations {
+  id: ID!
+  equivalences_id(filter: equivalences_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): equivalences
+  languages_code(filter: languages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): languages
+
+  """La question a poser à l'utilisateur"""
+  title: String!
+}
+
+type equivalences_translations_aggregated {
+  group: JSON
+  countAll: Int
+  count: equivalences_translations_aggregated_count
+  countDistinct: equivalences_translations_aggregated_count
+  avg: equivalences_translations_aggregated_fields
+  sum: equivalences_translations_aggregated_fields
+  avgDistinct: equivalences_translations_aggregated_fields
+  sumDistinct: equivalences_translations_aggregated_fields
+  min: equivalences_translations_aggregated_fields
+  max: equivalences_translations_aggregated_fields
+}
+
+type equivalences_translations_aggregated_count {
+  id: Int
+  equivalences_id: Int
+  languages_code: Int
+
+  """La question a poser à l'utilisateur"""
+  title: Int
+}
+
+type equivalences_translations_aggregated_fields {
+  id: Float
+}
+
+type equivalences_translations_mutated {
+  key: ID!
+  event: EventEnum
+  data: equivalences_translations
+}
+
 type habits {
   id: ID!
   date_created: Date
@@ -1560,6 +1685,32 @@ type version_directus_sync_id_map {
 }
 
 """"""
+type version_equivalences {
+  id: ID
+  date_created: Date
+  date_updated: Date
+
+  """La réponse correcte de l'équivalence"""
+  count: Int
+
+  """La valeur max que peut choisir l'utilisateur"""
+  max_guess: Int
+  compared_asset: String
+  comparing_asset: String
+  translations: JSON
+}
+
+""""""
+type version_equivalences_translations {
+  id: ID
+  equivalences_id: JSON
+  languages_code: JSON
+
+  """La question a poser à l'utilisateur"""
+  title: String
+}
+
+""""""
 type version_habits {
   id: ID
   date_created: Date
@@ -1894,6 +2045,30 @@ input create_directus_users_input {
   theme_dark_overrides: JSON
   text_direction: String
   policies: [create_directus_access_input]
+}
+
+input create_equivalences_input {
+  id: ID
+  date_created: Date
+  date_updated: Date
+
+  """La réponse correcte de l'équivalence"""
+  count: Int
+
+  """La valeur max que peut choisir l'utilisateur"""
+  max_guess: Int
+  compared_asset: String!
+  comparing_asset: String!
+  translations: [create_equivalences_translations_input]
+}
+
+input create_equivalences_translations_input {
+  id: ID
+  equivalences_id: create_equivalences_input
+  languages_code: create_languages_input
+
+  """La question a poser à l'utilisateur"""
+  title: String!
 }
 
 input create_habits_input {
@@ -2491,6 +2666,43 @@ input directus_versions_filter {
   _or: [directus_versions_filter]
 }
 
+input equivalences_filter {
+  id: id_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  count: number_filter_operators
+  max_guess: number_filter_operators
+  compared_asset: string_filter_operators
+  comparing_asset: string_filter_operators
+  translations: equivalences_translations_quantifier_filter
+  translations_func: count_function_filter_operators
+  _and: [equivalences_filter]
+  _or: [equivalences_filter]
+}
+
+input equivalences_translations_filter {
+  id: number_filter_operators
+  equivalences_id: equivalences_filter
+  languages_code: languages_filter
+  title: string_filter_operators
+  _and: [equivalences_translations_filter]
+  _or: [equivalences_translations_filter]
+}
+
+""""""
+input equivalences_translations_quantifier_filter {
+  id: number_filter_operators
+  equivalences_id: equivalences_filter
+  languages_code: languages_filter
+  title: string_filter_operators
+  _and: [equivalences_translations_filter]
+  _or: [equivalences_translations_filter]
+  _some: equivalences_translations_filter
+  _none: equivalences_translations_filter
+}
+
 input habits_filter {
   id: id_filter_operators
   date_created: date_filter_operators
@@ -2641,6 +2853,7 @@ input lessons_content_filter {
   item__quests: quests_filter
   item__quizzes: quizzes_filter
   item__habits: habits_filter
+  item__equivalences: equivalences_filter
 }
 
 """"""
@@ -2657,6 +2870,7 @@ input lessons_content_quantifier_filter {
   item__quests: quests_filter
   item__quizzes: quizzes_filter
   item__habits: habits_filter
+  item__equivalences: equivalences_filter
 }
 
 input lessons_filter {
@@ -3002,6 +3216,30 @@ input update_directus_users_input {
   theme_dark_overrides: JSON
   text_direction: String
   policies: [update_directus_access_input]
+}
+
+input update_equivalences_input {
+  id: ID
+  date_created: Date
+  date_updated: Date
+
+  """La réponse correcte de l'équivalence"""
+  count: Int
+
+  """La valeur max que peut choisir l'utilisateur"""
+  max_guess: Int
+  compared_asset: String
+  comparing_asset: String
+  translations: [update_equivalences_translations_input]
+}
+
+input update_equivalences_translations_input {
+  id: ID
+  equivalences_id: update_equivalences_input
+  languages_code: update_languages_input
+
+  """La question a poser à l'utilisateur"""
+  title: String
 }
 
 input update_habits_input {
