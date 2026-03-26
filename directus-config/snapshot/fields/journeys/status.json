@@ -28,6 +28,11 @@
           "foreground": "var(--theme--warning)",
           "text": "$t:archived",
           "value": "archived"
+        },
+        {
+          "color": "#A2B5CD",
+          "text": "Locked",
+          "value": "locked"
         }
       ],
       "showAsDot": true
@@ -53,6 +58,11 @@
           "color": "var(--theme--warning)",
           "text": "$t:archived",
           "value": "archived"
+        },
+        {
+          "color": "#A2B5CD",
+          "text": "Locked",
+          "value": "locked"
         }
       ]
     },
