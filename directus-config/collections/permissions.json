@@ -1,1 +1,794 @@
-[]
+[
+  {
+    "collection": "chapters_translations",
+    "action": "create",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "d743a4ba-abd6-45b4-ba1d-d078e820333d"
+  },
+  {
+    "collection": "chapters_translations",
+    "action": "delete",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "4ac127b3-7904-4f89-92fb-179027686a03"
+  },
+  {
+    "collection": "chapters_translations",
+    "action": "read",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "ad81e320-c1a8-42f9-ad6e-6ac4f4c3044c"
+  },
+  {
+    "collection": "chapters_translations",
+    "action": "update",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "61170bc0-1da6-40bd-86c4-7cef16be1674"
+  },
+  {
+    "collection": "chapters",
+    "action": "create",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "ebeb4783-966f-4548-a01a-ed2d379ba2bc"
+  },
+  {
+    "collection": "chapters",
+    "action": "delete",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "b732e79d-ca79-415c-a0cc-a4b32a1d8a96"
+  },
+  {
+    "collection": "chapters",
+    "action": "read",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "4f91fa91-236d-4cba-9292-c70121ffcc46"
+  },
+  {
+    "collection": "chapters",
+    "action": "update",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "b23f8b1a-1225-405f-bf9a-4f41b44c9182"
+  },
+  {
+    "collection": "directus_files",
+    "action": "create",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "6b4464a8-434f-4725-8f74-1d675e249e05"
+  },
+  {
+    "collection": "directus_files",
+    "action": "delete",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "188e1122-3310-4311-a763-8773f9af29ad"
+  },
+  {
+    "collection": "directus_files",
+    "action": "read",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "263b3e12-4c6f-4b7a-ba17-6ac440a2dd8c"
+  },
+  {
+    "collection": "directus_files",
+    "action": "update",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "b53c06a4-0631-44bb-8c80-9f1eb7869a3f"
+  },
+  {
+    "collection": "directus_folders",
+    "action": "read",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "2c4db230-c214-4dee-af86-0dd3ab4ecfb5"
+  },
+  {
+    "collection": "habits_translations",
+    "action": "create",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "b7a79497-edff-4cd7-ab33-81d3ea39b0fc"
+  },
+  {
+    "collection": "habits_translations",
+    "action": "delete",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "07fbe90d-d0b2-42fa-9f6b-243c0bb5aca7"
+  },
+  {
+    "collection": "habits_translations",
+    "action": "read",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "ede84243-cdef-467d-9684-62dbdd7b70e2"
+  },
+  {
+    "collection": "habits_translations",
+    "action": "update",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "8a12cce5-1e76-4d42-acbe-f7535f22e333"
+  },
+  {
+    "collection": "habits",
+    "action": "create",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "05d1f0dd-6a27-4b58-81f4-846faefbf328"
+  },
+  {
+    "collection": "habits",
+    "action": "delete",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "33225f24-0c0b-4cd5-86c8-b61b831177cb"
+  },
+  {
+    "collection": "habits",
+    "action": "read",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "fb3bc3ab-82a2-4c3e-9234-b286ce4510ef"
+  },
+  {
+    "collection": "habits",
+    "action": "update",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "662da089-b077-4cce-861e-26c5e412c9f8"
+  },
+  {
+    "collection": "journeys_translations",
+    "action": "create",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "3ce02171-a86d-40fa-9d1f-2ff8dea2162a"
+  },
+  {
+    "collection": "journeys_translations",
+    "action": "delete",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "0aa84766-00f9-4525-a705-e1880759d077"
+  },
+  {
+    "collection": "journeys_translations",
+    "action": "read",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "90f9b6a4-30f7-4f58-8458-0823cace6fb1"
+  },
+  {
+    "collection": "journeys_translations",
+    "action": "update",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "8f0c197c-7f7d-4a4a-98f1-3b82d4338c70"
+  },
+  {
+    "collection": "journeys",
+    "action": "create",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "701cd3f2-ddbb-46e1-88de-fd3042b43c2e"
+  },
+  {
+    "collection": "journeys",
+    "action": "delete",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "e6f64988-0e8a-447e-9113-5552154df30d"
+  },
+  {
+    "collection": "journeys",
+    "action": "read",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "60db22b5-102f-4f42-bb65-b89209cde423"
+  },
+  {
+    "collection": "journeys",
+    "action": "update",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "2ce648f8-e48e-40a9-9f42-e77c5672eb14"
+  },
+  {
+    "collection": "languages",
+    "action": "read",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "1e472205-91a0-4d76-98d6-e5602c3820a9"
+  },
+  {
+    "collection": "lessons_content",
+    "action": "create",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "bf26de97-5936-43ee-8914-2bfcf807ac52"
+  },
+  {
+    "collection": "lessons_content",
+    "action": "delete",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "1e93627c-617b-4229-9ce1-f03394f407de"
+  },
+  {
+    "collection": "lessons_content",
+    "action": "read",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "051fc921-eb3f-4007-b1b6-cb6d241653e6"
+  },
+  {
+    "collection": "lessons_content",
+    "action": "update",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "7ff2a453-94aa-4357-b928-f24d39e33595"
+  },
+  {
+    "collection": "lessons_translations",
+    "action": "create",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "6cbc66ef-c3df-4ab8-955e-7a0ed2ed29ae"
+  },
+  {
+    "collection": "lessons_translations",
+    "action": "delete",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "0ed9c420-a748-4bd9-82e2-44bd8caec3a0"
+  },
+  {
+    "collection": "lessons_translations",
+    "action": "read",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "382c494f-b761-494f-8fb2-0c6ca811dc54"
+  },
+  {
+    "collection": "lessons_translations",
+    "action": "update",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "a3c829b1-5812-47c2-a93c-0c41052141f1"
+  },
+  {
+    "collection": "lessons",
+    "action": "create",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "1defc2d6-1c3a-451e-8656-b34fdc3c1d2b"
+  },
+  {
+    "collection": "lessons",
+    "action": "delete",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "8a911a66-2a24-4eec-8aae-cb8ccd67521f"
+  },
+  {
+    "collection": "lessons",
+    "action": "read",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "70d4de0e-2544-49a4-9300-f29180f2acd6"
+  },
+  {
+    "collection": "lessons",
+    "action": "update",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "066ece4b-83cc-4c8c-881b-6afee08d8e75"
+  },
+  {
+    "collection": "quests_translations",
+    "action": "create",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "9440bcd0-92b0-4284-8c77-384ebf3bde5f"
+  },
+  {
+    "collection": "quests_translations",
+    "action": "delete",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "8252b638-66a4-4686-bdef-fad42197c605"
+  },
+  {
+    "collection": "quests_translations",
+    "action": "read",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "0d37dc0c-6efc-48ea-b717-421fa766fafb"
+  },
+  {
+    "collection": "quests_translations",
+    "action": "update",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "6f0b1043-4017-4cc3-8e5b-7db6c3396e84"
+  },
+  {
+    "collection": "quests",
+    "action": "create",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "8d5b5d6a-88d1-482e-ac47-18d2a93b1327"
+  },
+  {
+    "collection": "quests",
+    "action": "delete",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "2ef56600-da63-4f03-b0ea-3f95dd7ae642"
+  },
+  {
+    "collection": "quests",
+    "action": "read",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "1371750f-cffe-4864-9ca4-73ab8b2c40ab"
+  },
+  {
+    "collection": "quests",
+    "action": "update",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "19ecd392-5881-4204-8971-c269ff6975e9"
+  },
+  {
+    "collection": "quizzes_translations",
+    "action": "create",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "266afebb-ede3-4e46-826f-f2a24e4bce83"
+  },
+  {
+    "collection": "quizzes_translations",
+    "action": "delete",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "e7a1e72a-6d65-4f9e-91b4-50889b55cacb"
+  },
+  {
+    "collection": "quizzes_translations",
+    "action": "read",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "74a534e0-d636-4239-86d9-a879fa87fb20"
+  },
+  {
+    "collection": "quizzes_translations",
+    "action": "update",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "821eed2e-2b6d-461c-a614-2258bae1971e"
+  },
+  {
+    "collection": "quizzes",
+    "action": "create",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "0bcbe2cc-ffee-4fe4-95d4-986174c7c20c"
+  },
+  {
+    "collection": "quizzes",
+    "action": "delete",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "d8713c2f-79ee-4337-bbb3-510e77d0b250"
+  },
+  {
+    "collection": "quizzes",
+    "action": "read",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "2eff021a-f76d-45e1-837a-234e8c39d312"
+  },
+  {
+    "collection": "quizzes",
+    "action": "update",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "1e727f31-c16f-4f02-a8a0-4f98f6f9debc"
+  },
+  {
+    "collection": "universes_translations",
+    "action": "create",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "caedc241-7646-4efb-b823-661dca124d9a"
+  },
+  {
+    "collection": "universes_translations",
+    "action": "delete",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "1b3ba46d-37dc-41d0-93d4-8a9dc177fc58"
+  },
+  {
+    "collection": "universes_translations",
+    "action": "read",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "434c5019-4cd5-46bf-9986-606a7eac0321"
+  },
+  {
+    "collection": "universes_translations",
+    "action": "update",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "581f6394-97f6-4c98-a97a-39b16bf9cdd6"
+  },
+  {
+    "collection": "universes",
+    "action": "create",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "141021bb-db6b-4d73-a7a4-4e0af769e87d"
+  },
+  {
+    "collection": "universes",
+    "action": "delete",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "c381efbd-24e9-432a-8580-7a80d4bf187e"
+  },
+  {
+    "collection": "universes",
+    "action": "read",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "6352afb0-eb0b-4ff0-acab-56784a038398"
+  },
+  {
+    "collection": "universes",
+    "action": "update",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "10008c37-0d1e-46b0-86fb-96e0f08abacd",
+    "_syncId": "1f2f857a-4826-4696-ba3a-e56710891327"
+  }
+]

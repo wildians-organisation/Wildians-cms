@@ -5,5 +5,12 @@
     "description": "$t:admin_description",
     "parent": null,
     "_syncId": "_sync_default_admin_role"
+  },
+  {
+    "name": "Editor",
+    "icon": "edit_note",
+    "description": "Can read and write content",
+    "parent": null,
+    "_syncId": "5568c473-c94b-46bc-8b98-cc843a622b4c"
   }
 ]

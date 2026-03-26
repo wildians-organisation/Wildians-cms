@@ -30,5 +30,21 @@
       }
     ],
     "_syncId": "_sync_default_public_policy"
+  },
+  {
+    "name": "Editor",
+    "icon": "badge",
+    "description": null,
+    "ip_access": null,
+    "enforce_tfa": false,
+    "admin_access": false,
+    "app_access": true,
+    "roles": [
+      {
+        "role": "5568c473-c94b-46bc-8b98-cc843a622b4c",
+        "sort": 1
+      }
+    ],
+    "_syncId": "10008c37-0d1e-46b0-86fb-96e0f08abacd"
   }
 ]
