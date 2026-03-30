@@ -6,5 +6,8 @@ Headless CMS built with Directus
 
 1. Change schema via directus dashboard on local supabase instance
 2. Run `npx directus-sync pull`
+3. In app project, run `supabase/bin/dump_content.sh`
+4. `supabase migration new <name>` + add sql corresponding to your changes.
 3. Run `docker compose up -d` (targeting linked supabase instance)
 4. Run `npx directus-sync push`
+5. `supabase migration repair --applied <id>` mark migration as applied
