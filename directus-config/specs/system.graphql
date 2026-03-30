@@ -358,6 +358,9 @@ type chapters {
   date_updated: Date
   date_updated_func: datetime_functions
   id: ID!
+
+  """In seconds"""
+  read_duration: Int
   translations(filter: chapters_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [chapters_translations]
   translations_func: count_functions
 }
@@ -2088,6 +2091,7 @@ input chapters_filter {
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
   id: id_filter_operators
+  read_duration: number_filter_operators
   translations: chapters_translations_quantifier_filter
   translations_func: count_function_filter_operators
   _and: [chapters_filter]

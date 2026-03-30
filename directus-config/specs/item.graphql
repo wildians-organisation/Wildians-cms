@@ -286,6 +286,9 @@ type chapters {
   date_updated: Date
   date_updated_func: datetime_functions
   id: ID!
+
+  """In seconds"""
+  read_duration: Int
   translations(filter: chapters_translations_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [chapters_translations]
   translations_func: count_functions
 }
@@ -295,13 +298,27 @@ type chapters_aggregated {
   countAll: Int
   count: chapters_aggregated_count
   countDistinct: chapters_aggregated_count
+  avg: chapters_aggregated_fields
+  sum: chapters_aggregated_fields
+  avgDistinct: chapters_aggregated_fields
+  sumDistinct: chapters_aggregated_fields
+  min: chapters_aggregated_fields
+  max: chapters_aggregated_fields
 }
 
 type chapters_aggregated_count {
   date_created: Int
   date_updated: Int
   id: Int
+
+  """In seconds"""
+  read_duration: Int
   translations: Int
+}
+
+type chapters_aggregated_fields {
+  """In seconds"""
+  read_duration: Float
 }
 
 type chapters_mutated {
@@ -1538,6 +1555,9 @@ type version_chapters {
   date_created: Date
   date_updated: Date
   id: ID
+
+  """In seconds"""
+  read_duration: Int
   translations: JSON
 }
 
@@ -1728,6 +1748,7 @@ input chapters_filter {
   date_updated: date_filter_operators
   date_updated_func: datetime_function_filter_operators
   id: id_filter_operators
+  read_duration: number_filter_operators
   translations: chapters_translations_quantifier_filter
   translations_func: count_function_filter_operators
   _and: [chapters_filter]
@@ -1765,6 +1786,9 @@ input create_chapters_input {
   date_created: Date
   date_updated: Date
   id: ID
+
+  """In seconds"""
+  read_duration: Int
   translations: [create_chapters_translations_input]
 }
 
@@ -2873,6 +2897,9 @@ input update_chapters_input {
   date_created: Date
   date_updated: Date
   id: ID
+
+  """In seconds"""
+  read_duration: Int
   translations: [update_chapters_translations_input]
 }
 
