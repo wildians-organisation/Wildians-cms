@@ -10,9 +10,11 @@
     "field": "task",
     "group": null,
     "hidden": false,
-    "interface": "input-multiline",
+    "interface": "input-rich-text-md",
     "note": null,
-    "options": null,
+    "options": {
+      "folder": "397d8ec8-8ce8-4f9b-bdb5-cdd181e1c208"
+    },
     "readonly": false,
     "required": true,
     "searchable": true,
