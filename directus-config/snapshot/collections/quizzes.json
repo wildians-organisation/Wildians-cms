@@ -10,7 +10,7 @@
     "color": null,
     "display_template": "{{translations.title}}",
     "group": "content",
-    "hidden": true,
+    "hidden": false,
     "icon": "help",
     "item_duplication_fields": null,
     "note": null,
